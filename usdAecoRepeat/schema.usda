@@ -1,0 +1,59 @@
+#usda 1.0
+(
+    subLayers = [@usd/schema.usda@, @usdGeom/schema.usda@, @usdAeco/schema.usda@]
+)
+over "GLOBAL" (
+    customData = {
+        string libraryName = "usdAecoRepeat"
+        string libraryPath = "."
+        bool skipCodeGeneration = true
+        bool useLiteralIdentifier = true
+    }
+) {}
+
+class "AecoRepeatAPI" (
+    inherits = </APISchemaBase>
+    prepend apiSchemas = ["CollectionAPI:deviations"]
+    doc = "Repetition of a spatial container through a prototype. Declared exceptions use the built-in explicit deviations collection; each member has customData aeco:repeat:reason."
+    customData = {
+        string className = "RepeatAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["AecoSpatialBase"]
+    }
+) {
+    rel aeco:repeat:prototype (
+        doc = "DRIVER. Exactly one spatial container to repeat; cycles are invalid."
+    )
+    matrix4d aeco:repeat:offset (
+        aecoDerived = true
+        doc = "DERIVED. Prototype-world to occurrence-world transform, in stage units. Recomputed from container placement."
+    )
+    uniform token collection:deviations:expansionRule = "explicitOnly"
+}
+
+class "AecoQuantityAPI" (
+    inherits = </APISchemaBase>
+    doc = "IFC Qto-shaped measured base quantities. SI metres, square metres and cubic metres; count is dimensionless. Each authored quantity carries customData source, method and stamp under aeco:qto. Unavailable dimensions remain unauthored."
+    customData = {
+        string className = "QuantityAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Imageable"]
+    }
+) {
+    double aeco:qto:length (
+        aecoDerived = true
+        doc = "DERIVED (m). Axis length, or the longest local body dimension when no axis exists."
+    )
+    double aeco:qto:area (
+        aecoDerived = true
+        doc = "DERIVED (m2). One-face gross section area for axis/build-up elements; otherwise body surface area. Method is stamped."
+    )
+    double aeco:qto:volume (
+        aecoDerived = true
+        doc = "DERIVED (m3). Gross section volume from axis/build-up, otherwise closed tessellated body volume. Method is stamped."
+    )
+    double aeco:qto:count = 1 (
+        aecoDerived = true
+        doc = "DERIVED. One per element occurrence. Never count representations as elements."
+    )
+}

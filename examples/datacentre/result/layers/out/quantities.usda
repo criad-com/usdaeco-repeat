@@ -1,0 +1,2879 @@
+#usda 1.0
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Office_Corridor_L01"
+                {
+                    over "sec_cam_corr_ocorr_1_1" (
+                        prepend apiSchemas = ["AecoQuantityAPI"]
+                    )
+                    {
+                        double aeco:qto:area = 0.11519999723434449 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-surface-tessellated"
+                                        string source = "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+                                        string stamp = "b9000b768934f486c918cf61b795536179b96ce595f26ce62b534c5bd42466ba"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:count = 1 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "element-occurrence"
+                                        string source = "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+                                        string stamp = "b9000b768934f486c918cf61b795536179b96ce595f26ce62b534c5bd42466ba"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:length = 0.1599999964237213 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-local-major-dimension"
+                                        string source = "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+                                        string stamp = "b9000b768934f486c918cf61b795536179b96ce595f26ce62b534c5bd42466ba"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:volume = 0.002559999923706054 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-volume-closed-tessellated"
+                                        string source = "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+                                        string stamp = "b9000b768934f486c918cf61b795536179b96ce595f26ce62b534c5bd42466ba"
+                                    }
+                                }
+                            }
+                        )
+                    }
+
+                    over "sec_cam_corr_ocorr_1_2" (
+                        prepend apiSchemas = ["AecoQuantityAPI"]
+                    )
+                    {
+                        double aeco:qto:area = 0.11519999723434449 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-surface-tessellated"
+                                        string source = "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+                                        string stamp = "8d5520fbbb2f67cbf742b64021cd5459427771511c3ad1e262d9dcaa37520890"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:count = 1 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "element-occurrence"
+                                        string source = "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+                                        string stamp = "8d5520fbbb2f67cbf742b64021cd5459427771511c3ad1e262d9dcaa37520890"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:length = 0.1599999964237213 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-local-major-dimension"
+                                        string source = "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+                                        string stamp = "8d5520fbbb2f67cbf742b64021cd5459427771511c3ad1e262d9dcaa37520890"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:volume = 0.002559999923706054 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-volume-closed-tessellated"
+                                        string source = "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+                                        string stamp = "8d5520fbbb2f67cbf742b64021cd5459427771511c3ad1e262d9dcaa37520890"
+                                    }
+                                }
+                            }
+                        )
+                    }
+                }
+
+                over "Stair_L01"
+                {
+                    over "Office_Stair" (
+                        prepend apiSchemas = ["AecoQuantityAPI"]
+                    )
+                    {
+                        double aeco:qto:area = 12.9328538225853 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-surface-tessellated"
+                                        string source = "433acb7c-dbba-5481-96c6-de9afd976ddd"
+                                        string stamp = "ef55d58c784f9b65c772b6420ae567d20bf72b5889a8d94fc9c0c9d5504150a8"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:count = 1 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "element-occurrence"
+                                        string source = "433acb7c-dbba-5481-96c6-de9afd976ddd"
+                                        string stamp = "ef55d58c784f9b65c772b6420ae567d20bf72b5889a8d94fc9c0c9d5504150a8"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:length = 3 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-local-major-dimension"
+                                        string source = "433acb7c-dbba-5481-96c6-de9afd976ddd"
+                                        string stamp = "ef55d58c784f9b65c772b6420ae567d20bf72b5889a8d94fc9c0c9d5504150a8"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:volume = 1.0079999163150766 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-volume-closed-tessellated"
+                                        string source = "433acb7c-dbba-5481-96c6-de9afd976ddd"
+                                        string stamp = "ef55d58c784f9b65c772b6420ae567d20bf72b5889a8d94fc9c0c9d5504150a8"
+                                    }
+                                }
+                            }
+                        )
+                    }
+                }
+
+                over "door_kitchen" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "7a6ebc2a-94b2-5cf5-8a2e-dac1e35b76c1"
+                                    string stamp = "a5f95069a88ce9cdb6c68ceed06ce99b0c0b23e3ed10279c95f26fa93ad09576"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "7a6ebc2a-94b2-5cf5-8a2e-dac1e35b76c1"
+                                    string stamp = "a5f95069a88ce9cdb6c68ceed06ce99b0c0b23e3ed10279c95f26fa93ad09576"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "7a6ebc2a-94b2-5cf5-8a2e-dac1e35b76c1"
+                                    string stamp = "a5f95069a88ce9cdb6c68ceed06ce99b0c0b23e3ed10279c95f26fa93ad09576"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "7a6ebc2a-94b2-5cf5-8a2e-dac1e35b76c1"
+                                    string stamp = "a5f95069a88ce9cdb6c68ceed06ce99b0c0b23e3ed10279c95f26fa93ad09576"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_meeting_1" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "e58cf07c-9dfc-59dd-b09f-07f776552645"
+                                    string stamp = "510c76f2b53dee76ac164a6b815ba6a922d8771c547d53e68e74d6777f976867"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "e58cf07c-9dfc-59dd-b09f-07f776552645"
+                                    string stamp = "510c76f2b53dee76ac164a6b815ba6a922d8771c547d53e68e74d6777f976867"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "e58cf07c-9dfc-59dd-b09f-07f776552645"
+                                    string stamp = "510c76f2b53dee76ac164a6b815ba6a922d8771c547d53e68e74d6777f976867"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "e58cf07c-9dfc-59dd-b09f-07f776552645"
+                                    string stamp = "510c76f2b53dee76ac164a6b815ba6a922d8771c547d53e68e74d6777f976867"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_office_1" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 11.151159396959635 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "a1fa5d26-090b-510d-959c-da041182dd8c"
+                                    string stamp = "55a1c070fb3146ce1bc1ba0e92f364d6a1388636b4871f9bd2ebeee9de639d08"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "a1fa5d26-090b-510d-959c-da041182dd8c"
+                                    string stamp = "55a1c070fb3146ce1bc1ba0e92f364d6a1388636b4871f9bd2ebeee9de639d08"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "a1fa5d26-090b-510d-959c-da041182dd8c"
+                                    string stamp = "55a1c070fb3146ce1bc1ba0e92f364d6a1388636b4871f9bd2ebeee9de639d08"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.14471798125243365 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "a1fa5d26-090b-510d-959c-da041182dd8c"
+                                    string stamp = "55a1c070fb3146ce1bc1ba0e92f364d6a1388636b4871f9bd2ebeee9de639d08"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_stair_1" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "9321b2ab-7e62-5a34-bd1b-4dd41c818ca2"
+                                    string stamp = "02c619ef9d64757f185a514568829a62c4a99c26470eaf63e8cbc314f21bdf85"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "9321b2ab-7e62-5a34-bd1b-4dd41c818ca2"
+                                    string stamp = "02c619ef9d64757f185a514568829a62c4a99c26470eaf63e8cbc314f21bdf85"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "9321b2ab-7e62-5a34-bd1b-4dd41c818ca2"
+                                    string stamp = "02c619ef9d64757f185a514568829a62c4a99c26470eaf63e8cbc314f21bdf85"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "9321b2ab-7e62-5a34-bd1b-4dd41c818ca2"
+                                    string stamp = "02c619ef9d64757f185a514568829a62c4a99c26470eaf63e8cbc314f21bdf85"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_wc" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "d955b4e4-b067-5b71-a32a-02acae314fe7"
+                                    string stamp = "7feee9bbe11633da1d8149361f5ad05a24666443b445e5c31e5c5d62dae18f07"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "d955b4e4-b067-5b71-a32a-02acae314fe7"
+                                    string stamp = "7feee9bbe11633da1d8149361f5ad05a24666443b445e5c31e5c5d62dae18f07"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "d955b4e4-b067-5b71-a32a-02acae314fe7"
+                                    string stamp = "7feee9bbe11633da1d8149361f5ad05a24666443b445e5c31e5c5d62dae18f07"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "d955b4e4-b067-5b71-a32a-02acae314fe7"
+                                    string stamp = "7feee9bbe11633da1d8149361f5ad05a24666443b445e5c31e5c5d62dae18f07"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "slab_l1_office" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 429 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "74510da6-0878-5d0a-b122-2a3e782686ae"
+                                    string stamp = "1e341d48f217393caf9f8d96420033267351d4ef5819c16d58428b413b13346d"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "74510da6-0878-5d0a-b122-2a3e782686ae"
+                                    string stamp = "1e341d48f217393caf9f8d96420033267351d4ef5819c16d58428b413b13346d"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 18 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "74510da6-0878-5d0a-b122-2a3e782686ae"
+                                    string stamp = "1e341d48f217393caf9f8d96420033267351d4ef5819c16d58428b413b13346d"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 51.75 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "74510da6-0878-5d0a-b122-2a3e782686ae"
+                                    string stamp = "1e341d48f217393caf9f8d96420033267351d4ef5819c16d58428b413b13346d"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_001" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 30 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "1aba178f-cac6-5655-9fb3-22c675cc2dd7"
+                                    string stamp = "aaac679c318b8b9c66d93135f0a90be4f4b948fc3b35972e0675c4d76ecae4ae"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "1aba178f-cac6-5655-9fb3-22c675cc2dd7"
+                                    string stamp = "aaac679c318b8b9c66d93135f0a90be4f4b948fc3b35972e0675c4d76ecae4ae"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 10 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "1aba178f-cac6-5655-9fb3-22c675cc2dd7"
+                                    string stamp = "aaac679c318b8b9c66d93135f0a90be4f4b948fc3b35972e0675c4d76ecae4ae"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "1aba178f-cac6-5655-9fb3-22c675cc2dd7"
+                                    string stamp = "aaac679c318b8b9c66d93135f0a90be4f4b948fc3b35972e0675c4d76ecae4ae"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_002" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "4556958a-1b5c-5eeb-89a9-7cf49af08c5a"
+                                    string stamp = "cc04796f8482d193d982ed0e76e7efad01016b5332e3868e1314bb3bcd295785"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "4556958a-1b5c-5eeb-89a9-7cf49af08c5a"
+                                    string stamp = "cc04796f8482d193d982ed0e76e7efad01016b5332e3868e1314bb3bcd295785"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "4556958a-1b5c-5eeb-89a9-7cf49af08c5a"
+                                    string stamp = "cc04796f8482d193d982ed0e76e7efad01016b5332e3868e1314bb3bcd295785"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.5999999999999996 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "4556958a-1b5c-5eeb-89a9-7cf49af08c5a"
+                                    string stamp = "cc04796f8482d193d982ed0e76e7efad01016b5332e3868e1314bb3bcd295785"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_003" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "aeedc717-acaa-5458-8d1e-acd1bcfa095d"
+                                    string stamp = "7835dd7514fe58fc508d7ebd57f21cc69e561df774eaef9e88eef2f706d3b2e9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "aeedc717-acaa-5458-8d1e-acd1bcfa095d"
+                                    string stamp = "7835dd7514fe58fc508d7ebd57f21cc69e561df774eaef9e88eef2f706d3b2e9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "aeedc717-acaa-5458-8d1e-acd1bcfa095d"
+                                    string stamp = "7835dd7514fe58fc508d7ebd57f21cc69e561df774eaef9e88eef2f706d3b2e9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.5999999999999996 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "aeedc717-acaa-5458-8d1e-acd1bcfa095d"
+                                    string stamp = "7835dd7514fe58fc508d7ebd57f21cc69e561df774eaef9e88eef2f706d3b2e9"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_004" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "9765b9c4-40bb-5ff7-a2a5-cdebad75b0bc"
+                                    string stamp = "1f19d77b9e4fb200d64e60cd8b39631f9d30bdd3dba0d60ca6eb58bde82c1512"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "9765b9c4-40bb-5ff7-a2a5-cdebad75b0bc"
+                                    string stamp = "1f19d77b9e4fb200d64e60cd8b39631f9d30bdd3dba0d60ca6eb58bde82c1512"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "9765b9c4-40bb-5ff7-a2a5-cdebad75b0bc"
+                                    string stamp = "1f19d77b9e4fb200d64e60cd8b39631f9d30bdd3dba0d60ca6eb58bde82c1512"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "9765b9c4-40bb-5ff7-a2a5-cdebad75b0bc"
+                                    string stamp = "1f19d77b9e4fb200d64e60cd8b39631f9d30bdd3dba0d60ca6eb58bde82c1512"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_005" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "e045c7cd-b953-5b4a-936b-b64d2bda214d"
+                                    string stamp = "be3817b1ad168c7f9b05d31055265b15464788c9d795b2347f70db465af47e0a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "e045c7cd-b953-5b4a-936b-b64d2bda214d"
+                                    string stamp = "be3817b1ad168c7f9b05d31055265b15464788c9d795b2347f70db465af47e0a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "e045c7cd-b953-5b4a-936b-b64d2bda214d"
+                                    string stamp = "be3817b1ad168c7f9b05d31055265b15464788c9d795b2347f70db465af47e0a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.3499999999999999 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "e045c7cd-b953-5b4a-936b-b64d2bda214d"
+                                    string stamp = "be3817b1ad168c7f9b05d31055265b15464788c9d795b2347f70db465af47e0a"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_006" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 21 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "93888444-e546-5ddb-a4ba-166a6073c262"
+                                    string stamp = "77648a0cfe159adfe8da0fe46051fce83e6b48c0e6cbee0eb9c26dc713db2fb6"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "93888444-e546-5ddb-a4ba-166a6073c262"
+                                    string stamp = "77648a0cfe159adfe8da0fe46051fce83e6b48c0e6cbee0eb9c26dc713db2fb6"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 7 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "93888444-e546-5ddb-a4ba-166a6073c262"
+                                    string stamp = "77648a0cfe159adfe8da0fe46051fce83e6b48c0e6cbee0eb9c26dc713db2fb6"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.15 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "93888444-e546-5ddb-a4ba-166a6073c262"
+                                    string stamp = "77648a0cfe159adfe8da0fe46051fce83e6b48c0e6cbee0eb9c26dc713db2fb6"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_007" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "51468e7f-5fca-54c5-9547-9c7f5cb51055"
+                                    string stamp = "966f1070eab25bd3c9933059ec2d31a36cb68ce789ccf2252d5aa0e8b7178892"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "51468e7f-5fca-54c5-9547-9c7f5cb51055"
+                                    string stamp = "966f1070eab25bd3c9933059ec2d31a36cb68ce789ccf2252d5aa0e8b7178892"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "51468e7f-5fca-54c5-9547-9c7f5cb51055"
+                                    string stamp = "966f1070eab25bd3c9933059ec2d31a36cb68ce789ccf2252d5aa0e8b7178892"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "51468e7f-5fca-54c5-9547-9c7f5cb51055"
+                                    string stamp = "966f1070eab25bd3c9933059ec2d31a36cb68ce789ccf2252d5aa0e8b7178892"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_008" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "43540151-c12f-56c9-b032-2b64fd66c8e4"
+                                    string stamp = "565a81653c422ecb32423b1eb782ae48771d69b4272d47b330d7aa76895a6c0d"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "43540151-c12f-56c9-b032-2b64fd66c8e4"
+                                    string stamp = "565a81653c422ecb32423b1eb782ae48771d69b4272d47b330d7aa76895a6c0d"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "43540151-c12f-56c9-b032-2b64fd66c8e4"
+                                    string stamp = "565a81653c422ecb32423b1eb782ae48771d69b4272d47b330d7aa76895a6c0d"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "43540151-c12f-56c9-b032-2b64fd66c8e4"
+                                    string stamp = "565a81653c422ecb32423b1eb782ae48771d69b4272d47b330d7aa76895a6c0d"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_009" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "cc8f6368-1f30-53e5-a842-8fd3461d0ac6"
+                                    string stamp = "3cc8652d31bd76836750f322c3ce804d3f0337fa34ebe6c640b1630832915748"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "cc8f6368-1f30-53e5-a842-8fd3461d0ac6"
+                                    string stamp = "3cc8652d31bd76836750f322c3ce804d3f0337fa34ebe6c640b1630832915748"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "cc8f6368-1f30-53e5-a842-8fd3461d0ac6"
+                                    string stamp = "3cc8652d31bd76836750f322c3ce804d3f0337fa34ebe6c640b1630832915748"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 2.6999999999999997 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "cc8f6368-1f30-53e5-a842-8fd3461d0ac6"
+                                    string stamp = "3cc8652d31bd76836750f322c3ce804d3f0337fa34ebe6c640b1630832915748"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_h_010" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 45 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "46bb8ddc-66ac-5ee6-ba2f-72feb5bf8844"
+                                    string stamp = "293aa6c2e40f8f2d6b1e4eefe4de216b41f01e1021ea3836d62d77a3bad75be6"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "46bb8ddc-66ac-5ee6-ba2f-72feb5bf8844"
+                                    string stamp = "293aa6c2e40f8f2d6b1e4eefe4de216b41f01e1021ea3836d62d77a3bad75be6"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 15 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "46bb8ddc-66ac-5ee6-ba2f-72feb5bf8844"
+                                    string stamp = "293aa6c2e40f8f2d6b1e4eefe4de216b41f01e1021ea3836d62d77a3bad75be6"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 13.5 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "46bb8ddc-66ac-5ee6-ba2f-72feb5bf8844"
+                                    string stamp = "293aa6c2e40f8f2d6b1e4eefe4de216b41f01e1021ea3836d62d77a3bad75be6"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_011" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 27 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "dd5cf3a2-629b-502e-bc90-de3eee629131"
+                                    string stamp = "d9fbc0645516b2c2c1d9a9d7493498df680e0f4f3fa21896b6753452761e227a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "dd5cf3a2-629b-502e-bc90-de3eee629131"
+                                    string stamp = "d9fbc0645516b2c2c1d9a9d7493498df680e0f4f3fa21896b6753452761e227a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "dd5cf3a2-629b-502e-bc90-de3eee629131"
+                                    string stamp = "d9fbc0645516b2c2c1d9a9d7493498df680e0f4f3fa21896b6753452761e227a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 8.1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "dd5cf3a2-629b-502e-bc90-de3eee629131"
+                                    string stamp = "d9fbc0645516b2c2c1d9a9d7493498df680e0f4f3fa21896b6753452761e227a"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_012" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "64c0b776-f5b1-556b-8a27-116d0f4e1b6f"
+                                    string stamp = "e9c67a87087b1c4c320dacb29d18930c5cf5f9e5a375b192fec33d5e640d339c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "64c0b776-f5b1-556b-8a27-116d0f4e1b6f"
+                                    string stamp = "e9c67a87087b1c4c320dacb29d18930c5cf5f9e5a375b192fec33d5e640d339c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "64c0b776-f5b1-556b-8a27-116d0f4e1b6f"
+                                    string stamp = "e9c67a87087b1c4c320dacb29d18930c5cf5f9e5a375b192fec33d5e640d339c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 2.6999999999999997 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "64c0b776-f5b1-556b-8a27-116d0f4e1b6f"
+                                    string stamp = "e9c67a87087b1c4c320dacb29d18930c5cf5f9e5a375b192fec33d5e640d339c"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_013" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "54f3cd30-3297-5932-8281-adfb776aab7d"
+                                    string stamp = "86b2210cce4bf52b41e4f5d4da8b4cfad7b1988c5a985ca00688ee075c78bd49"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "54f3cd30-3297-5932-8281-adfb776aab7d"
+                                    string stamp = "86b2210cce4bf52b41e4f5d4da8b4cfad7b1988c5a985ca00688ee075c78bd49"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "54f3cd30-3297-5932-8281-adfb776aab7d"
+                                    string stamp = "86b2210cce4bf52b41e4f5d4da8b4cfad7b1988c5a985ca00688ee075c78bd49"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.3499999999999999 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "54f3cd30-3297-5932-8281-adfb776aab7d"
+                                    string stamp = "86b2210cce4bf52b41e4f5d4da8b4cfad7b1988c5a985ca00688ee075c78bd49"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_014" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 27 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "2a39d1c5-51fc-50c0-b5ab-579342c7c597"
+                                    string stamp = "d2155af32e9291b0e55225894c9673cd2bfc6c71d79b4cddb6acf02a2e5b47dd"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "2a39d1c5-51fc-50c0-b5ab-579342c7c597"
+                                    string stamp = "d2155af32e9291b0e55225894c9673cd2bfc6c71d79b4cddb6acf02a2e5b47dd"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "2a39d1c5-51fc-50c0-b5ab-579342c7c597"
+                                    string stamp = "d2155af32e9291b0e55225894c9673cd2bfc6c71d79b4cddb6acf02a2e5b47dd"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 4.05 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "2a39d1c5-51fc-50c0-b5ab-579342c7c597"
+                                    string stamp = "d2155af32e9291b0e55225894c9673cd2bfc6c71d79b4cddb6acf02a2e5b47dd"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_015" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "c46e4871-96dd-54c4-af2b-1a161d7f1f55"
+                                    string stamp = "85db7641c3b8c6593dab2602d1b67938c3487d1f2f1a2495f56c32d0319319e8"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "c46e4871-96dd-54c4-af2b-1a161d7f1f55"
+                                    string stamp = "85db7641c3b8c6593dab2602d1b67938c3487d1f2f1a2495f56c32d0319319e8"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "c46e4871-96dd-54c4-af2b-1a161d7f1f55"
+                                    string stamp = "85db7641c3b8c6593dab2602d1b67938c3487d1f2f1a2495f56c32d0319319e8"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "c46e4871-96dd-54c4-af2b-1a161d7f1f55"
+                                    string stamp = "85db7641c3b8c6593dab2602d1b67938c3487d1f2f1a2495f56c32d0319319e8"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_016" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 15 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "d008ead2-8996-54f8-9ced-7345cc4a0a8d"
+                                    string stamp = "2323d556ce1c96151230b78c88ffc00aebb0760d492d0fd6cac5f253f1878eee"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "d008ead2-8996-54f8-9ced-7345cc4a0a8d"
+                                    string stamp = "2323d556ce1c96151230b78c88ffc00aebb0760d492d0fd6cac5f253f1878eee"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 5 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "d008ead2-8996-54f8-9ced-7345cc4a0a8d"
+                                    string stamp = "2323d556ce1c96151230b78c88ffc00aebb0760d492d0fd6cac5f253f1878eee"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 2.25 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "d008ead2-8996-54f8-9ced-7345cc4a0a8d"
+                                    string stamp = "2323d556ce1c96151230b78c88ffc00aebb0760d492d0fd6cac5f253f1878eee"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_017" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "17fabf2a-db55-5b3d-acbe-4cc963ed34b0"
+                                    string stamp = "bdb4148649a756ef984c01cdbbb44043f466921707129e460a4e8ac79076bcfa"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "17fabf2a-db55-5b3d-acbe-4cc963ed34b0"
+                                    string stamp = "bdb4148649a756ef984c01cdbbb44043f466921707129e460a4e8ac79076bcfa"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "17fabf2a-db55-5b3d-acbe-4cc963ed34b0"
+                                    string stamp = "bdb4148649a756ef984c01cdbbb44043f466921707129e460a4e8ac79076bcfa"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.5999999999999996 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "17fabf2a-db55-5b3d-acbe-4cc963ed34b0"
+                                    string stamp = "bdb4148649a756ef984c01cdbbb44043f466921707129e460a4e8ac79076bcfa"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_018" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 15 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "b8ad6534-0347-5bac-9654-5ba0bb28183a"
+                                    string stamp = "85415cb7a9b627abf5ab00c687a70c2fffed33df9b542effa2df372a4cccd7ac"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "b8ad6534-0347-5bac-9654-5ba0bb28183a"
+                                    string stamp = "85415cb7a9b627abf5ab00c687a70c2fffed33df9b542effa2df372a4cccd7ac"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 5 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "b8ad6534-0347-5bac-9654-5ba0bb28183a"
+                                    string stamp = "85415cb7a9b627abf5ab00c687a70c2fffed33df9b542effa2df372a4cccd7ac"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 4.5 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "b8ad6534-0347-5bac-9654-5ba0bb28183a"
+                                    string stamp = "85415cb7a9b627abf5ab00c687a70c2fffed33df9b542effa2df372a4cccd7ac"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l1_v_019" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "6401b4a1-b2f1-5eb6-9378-29e500fe9c37"
+                                    string stamp = "c50e72068fd85f0aa6faedd178907344c9fb107bf1f74aff440a2e85f1d99ca8"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "6401b4a1-b2f1-5eb6-9378-29e500fe9c37"
+                                    string stamp = "c50e72068fd85f0aa6faedd178907344c9fb107bf1f74aff440a2e85f1d99ca8"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "6401b4a1-b2f1-5eb6-9378-29e500fe9c37"
+                                    string stamp = "c50e72068fd85f0aa6faedd178907344c9fb107bf1f74aff440a2e85f1d99ca8"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 2.6999999999999997 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "6401b4a1-b2f1-5eb6-9378-29e500fe9c37"
+                                    string stamp = "c50e72068fd85f0aa6faedd178907344c9fb107bf1f74aff440a2e85f1d99ca8"
+                                }
+                            }
+                        }
+                    )
+                }
+            }
+
+            over "L02_Office"
+            {
+                over "Additional_Meeting_Access" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "3ca0f7bb-160c-52ca-b9b5-52db8a894f1c"
+                                    string stamp = "28caa4e555e9be8cce86839baa488dc8e0ada6551b97e9210b9e6f725ddc9796"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "3ca0f7bb-160c-52ca-b9b5-52db8a894f1c"
+                                    string stamp = "28caa4e555e9be8cce86839baa488dc8e0ada6551b97e9210b9e6f725ddc9796"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "3ca0f7bb-160c-52ca-b9b5-52db8a894f1c"
+                                    string stamp = "28caa4e555e9be8cce86839baa488dc8e0ada6551b97e9210b9e6f725ddc9796"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "3ca0f7bb-160c-52ca-b9b5-52db8a894f1c"
+                                    string stamp = "28caa4e555e9be8cce86839baa488dc8e0ada6551b97e9210b9e6f725ddc9796"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "Office_Corridor_L01"
+                {
+                    over "sec_cam_corr_ocorr_1_2_1" (
+                        prepend apiSchemas = ["AecoQuantityAPI"]
+                    )
+                    {
+                        double aeco:qto:area = 0.11519999723434449 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-surface-tessellated"
+                                        string source = "9450e28b-3295-58d3-9227-46ce3ced05f6"
+                                        string stamp = "f58d67c6130fc52b8e9856c53ce3e2a8c7f698a6eea33f73b7528a17135b433d"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:count = 1 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "element-occurrence"
+                                        string source = "9450e28b-3295-58d3-9227-46ce3ced05f6"
+                                        string stamp = "f58d67c6130fc52b8e9856c53ce3e2a8c7f698a6eea33f73b7528a17135b433d"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:length = 0.1599999964237213 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-local-major-dimension"
+                                        string source = "9450e28b-3295-58d3-9227-46ce3ced05f6"
+                                        string stamp = "f58d67c6130fc52b8e9856c53ce3e2a8c7f698a6eea33f73b7528a17135b433d"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:volume = 0.002559999923706054 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-volume-closed-tessellated"
+                                        string source = "9450e28b-3295-58d3-9227-46ce3ced05f6"
+                                        string stamp = "f58d67c6130fc52b8e9856c53ce3e2a8c7f698a6eea33f73b7528a17135b433d"
+                                    }
+                                }
+                            }
+                        )
+                    }
+
+                    over "sec_cam_corr_ocorr_1_2_2" (
+                        prepend apiSchemas = ["AecoQuantityAPI"]
+                    )
+                    {
+                        double aeco:qto:area = 0.11519999723434449 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-surface-tessellated"
+                                        string source = "cf0e90a2-9077-5579-84fb-c34662f92afe"
+                                        string stamp = "633dc498c2f2f71de3f01b5bcb0b6764f5d7f272b752c117fa70a74901137b95"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:count = 1 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "element-occurrence"
+                                        string source = "cf0e90a2-9077-5579-84fb-c34662f92afe"
+                                        string stamp = "633dc498c2f2f71de3f01b5bcb0b6764f5d7f272b752c117fa70a74901137b95"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:length = 0.1599999964237213 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-local-major-dimension"
+                                        string source = "cf0e90a2-9077-5579-84fb-c34662f92afe"
+                                        string stamp = "633dc498c2f2f71de3f01b5bcb0b6764f5d7f272b752c117fa70a74901137b95"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:volume = 0.002559999923706054 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-volume-closed-tessellated"
+                                        string source = "cf0e90a2-9077-5579-84fb-c34662f92afe"
+                                        string stamp = "633dc498c2f2f71de3f01b5bcb0b6764f5d7f272b752c117fa70a74901137b95"
+                                    }
+                                }
+                            }
+                        )
+                    }
+                }
+
+                over "Stair_L01"
+                {
+                    over "Office_Stair" (
+                        prepend apiSchemas = ["AecoQuantityAPI"]
+                    )
+                    {
+                        double aeco:qto:area = 12.9328538225853 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-surface-tessellated"
+                                        string source = "a6fd82c6-ba88-5b32-a6e9-77684acf0845"
+                                        string stamp = "ebef8a34c5b0308afd49473f04a7a877c5d87153a7f4693efcb6deaa3954aea6"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:count = 1 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "element-occurrence"
+                                        string source = "a6fd82c6-ba88-5b32-a6e9-77684acf0845"
+                                        string stamp = "ebef8a34c5b0308afd49473f04a7a877c5d87153a7f4693efcb6deaa3954aea6"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:length = 3 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-local-major-dimension"
+                                        string source = "a6fd82c6-ba88-5b32-a6e9-77684acf0845"
+                                        string stamp = "ebef8a34c5b0308afd49473f04a7a877c5d87153a7f4693efcb6deaa3954aea6"
+                                    }
+                                }
+                            }
+                        )
+                        double aeco:qto:volume = 1.0079999163150766 (
+                            customData = {
+                                dictionary aeco = {
+                                    dictionary qto = {
+                                        string method = "body-volume-closed-tessellated"
+                                        string source = "a6fd82c6-ba88-5b32-a6e9-77684acf0845"
+                                        string stamp = "ebef8a34c5b0308afd49473f04a7a877c5d87153a7f4693efcb6deaa3954aea6"
+                                    }
+                                }
+                            }
+                        )
+                    }
+                }
+
+                over "door_kitchen_2" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "95a6e681-5760-59ba-9a76-86f5fdbea074"
+                                    string stamp = "27430d2d591fa70fbb0d81c337b925c31a8406ca6e6f2ff68c939046d800c909"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "95a6e681-5760-59ba-9a76-86f5fdbea074"
+                                    string stamp = "27430d2d591fa70fbb0d81c337b925c31a8406ca6e6f2ff68c939046d800c909"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "95a6e681-5760-59ba-9a76-86f5fdbea074"
+                                    string stamp = "27430d2d591fa70fbb0d81c337b925c31a8406ca6e6f2ff68c939046d800c909"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "95a6e681-5760-59ba-9a76-86f5fdbea074"
+                                    string stamp = "27430d2d591fa70fbb0d81c337b925c31a8406ca6e6f2ff68c939046d800c909"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_meeting_1_2" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "8a801a9f-9592-5604-9aba-b0d9a7df759c"
+                                    string stamp = "8ad7d49e16972626ae43f4f11d5e0c83f7fbca94347f4bc16f7b7d9a9c96d925"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "8a801a9f-9592-5604-9aba-b0d9a7df759c"
+                                    string stamp = "8ad7d49e16972626ae43f4f11d5e0c83f7fbca94347f4bc16f7b7d9a9c96d925"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "8a801a9f-9592-5604-9aba-b0d9a7df759c"
+                                    string stamp = "8ad7d49e16972626ae43f4f11d5e0c83f7fbca94347f4bc16f7b7d9a9c96d925"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "8a801a9f-9592-5604-9aba-b0d9a7df759c"
+                                    string stamp = "8ad7d49e16972626ae43f4f11d5e0c83f7fbca94347f4bc16f7b7d9a9c96d925"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_office_1_2" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 11.151159396959635 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "69f8bcf0-4e05-5593-8188-b4ae53affe14"
+                                    string stamp = "c2496342d083bab1005cde18acf7442ad471023e29c0617bcc911a6beb8843cf"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "69f8bcf0-4e05-5593-8188-b4ae53affe14"
+                                    string stamp = "c2496342d083bab1005cde18acf7442ad471023e29c0617bcc911a6beb8843cf"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "69f8bcf0-4e05-5593-8188-b4ae53affe14"
+                                    string stamp = "c2496342d083bab1005cde18acf7442ad471023e29c0617bcc911a6beb8843cf"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.14471798125243365 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "69f8bcf0-4e05-5593-8188-b4ae53affe14"
+                                    string stamp = "c2496342d083bab1005cde18acf7442ad471023e29c0617bcc911a6beb8843cf"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_stair_1_2" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "96372576-0384-5ed8-ae02-bc1c935a4edf"
+                                    string stamp = "59ccdd8d1a94bf663b63f0869d547c3bd882f93822768682bc446ca8cf067e06"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "96372576-0384-5ed8-ae02-bc1c935a4edf"
+                                    string stamp = "59ccdd8d1a94bf663b63f0869d547c3bd882f93822768682bc446ca8cf067e06"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "96372576-0384-5ed8-ae02-bc1c935a4edf"
+                                    string stamp = "59ccdd8d1a94bf663b63f0869d547c3bd882f93822768682bc446ca8cf067e06"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "96372576-0384-5ed8-ae02-bc1c935a4edf"
+                                    string stamp = "59ccdd8d1a94bf663b63f0869d547c3bd882f93822768682bc446ca8cf067e06"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "door_wc_2" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 6.545999418018406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "e51fdf9e-1c04-5728-b18d-09972be43701"
+                                    string stamp = "a72a5fa75ddec2710b4b931a216e3d31c1bd35359cd05d293c16585b2544b3b9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "e51fdf9e-1c04-5728-b18d-09972be43701"
+                                    string stamp = "a72a5fa75ddec2710b4b931a216e3d31c1bd35359cd05d293c16585b2544b3b9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 2.125 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "e51fdf9e-1c04-5728-b18d-09972be43701"
+                                    string stamp = "a72a5fa75ddec2710b4b931a216e3d31c1bd35359cd05d293c16585b2544b3b9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 0.0756744902300406 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "e51fdf9e-1c04-5728-b18d-09972be43701"
+                                    string stamp = "a72a5fa75ddec2710b4b931a216e3d31c1bd35359cd05d293c16585b2544b3b9"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "slab_l2_office" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 429 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-surface-tessellated"
+                                    string source = "8c7be0f3-759d-57ff-b96c-fa5ef52d4717"
+                                    string stamp = "ce554d65fbd70db43935c8493a1f12361684b559b79e8e6780ec0249c946648a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "8c7be0f3-759d-57ff-b96c-fa5ef52d4717"
+                                    string stamp = "ce554d65fbd70db43935c8493a1f12361684b559b79e8e6780ec0249c946648a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 18 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-local-major-dimension"
+                                    string source = "8c7be0f3-759d-57ff-b96c-fa5ef52d4717"
+                                    string stamp = "ce554d65fbd70db43935c8493a1f12361684b559b79e8e6780ec0249c946648a"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 51.75 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "body-volume-closed-tessellated"
+                                    string source = "8c7be0f3-759d-57ff-b96c-fa5ef52d4717"
+                                    string stamp = "ce554d65fbd70db43935c8493a1f12361684b559b79e8e6780ec0249c946648a"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_001" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 30 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "e43db3b9-6938-52c8-998e-f6c797544a01"
+                                    string stamp = "271617b94f21c8716049f756178bc0708996197c5abcdc61d56f3ec816ed8ab2"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "e43db3b9-6938-52c8-998e-f6c797544a01"
+                                    string stamp = "271617b94f21c8716049f756178bc0708996197c5abcdc61d56f3ec816ed8ab2"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 10 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "e43db3b9-6938-52c8-998e-f6c797544a01"
+                                    string stamp = "271617b94f21c8716049f756178bc0708996197c5abcdc61d56f3ec816ed8ab2"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "e43db3b9-6938-52c8-998e-f6c797544a01"
+                                    string stamp = "271617b94f21c8716049f756178bc0708996197c5abcdc61d56f3ec816ed8ab2"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_002" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "e7fb50b9-0347-530c-b1d8-4ec9c3462f69"
+                                    string stamp = "e6df5936c0b6330d06f7a740ed5c96ae9ae5d56225d5e13175d5928f89d275ea"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "e7fb50b9-0347-530c-b1d8-4ec9c3462f69"
+                                    string stamp = "e6df5936c0b6330d06f7a740ed5c96ae9ae5d56225d5e13175d5928f89d275ea"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "e7fb50b9-0347-530c-b1d8-4ec9c3462f69"
+                                    string stamp = "e6df5936c0b6330d06f7a740ed5c96ae9ae5d56225d5e13175d5928f89d275ea"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.5999999999999996 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "e7fb50b9-0347-530c-b1d8-4ec9c3462f69"
+                                    string stamp = "e6df5936c0b6330d06f7a740ed5c96ae9ae5d56225d5e13175d5928f89d275ea"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_003" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "053a6aa8-4184-5dc8-b5c3-16545485e242"
+                                    string stamp = "0948f05731eb0910a813527c35e6ce8f15bd9a3e0cba1a9a5dc5560cccb4f754"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "053a6aa8-4184-5dc8-b5c3-16545485e242"
+                                    string stamp = "0948f05731eb0910a813527c35e6ce8f15bd9a3e0cba1a9a5dc5560cccb4f754"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "053a6aa8-4184-5dc8-b5c3-16545485e242"
+                                    string stamp = "0948f05731eb0910a813527c35e6ce8f15bd9a3e0cba1a9a5dc5560cccb4f754"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.5999999999999996 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "053a6aa8-4184-5dc8-b5c3-16545485e242"
+                                    string stamp = "0948f05731eb0910a813527c35e6ce8f15bd9a3e0cba1a9a5dc5560cccb4f754"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_004" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "707d9d9d-6751-55eb-b18b-8fbe7637bb8e"
+                                    string stamp = "fc0994f6630a91bb22ce7e42ea24c85d5a95c72892089e491a79fa91fcd9782c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "707d9d9d-6751-55eb-b18b-8fbe7637bb8e"
+                                    string stamp = "fc0994f6630a91bb22ce7e42ea24c85d5a95c72892089e491a79fa91fcd9782c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "707d9d9d-6751-55eb-b18b-8fbe7637bb8e"
+                                    string stamp = "fc0994f6630a91bb22ce7e42ea24c85d5a95c72892089e491a79fa91fcd9782c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "707d9d9d-6751-55eb-b18b-8fbe7637bb8e"
+                                    string stamp = "fc0994f6630a91bb22ce7e42ea24c85d5a95c72892089e491a79fa91fcd9782c"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_005" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "b6fb5c1f-2d68-5197-9480-79e819221f06"
+                                    string stamp = "da209ac989afedb37fb41a712db30a5dd31342549f3ce8b4c30a6830b9718510"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "b6fb5c1f-2d68-5197-9480-79e819221f06"
+                                    string stamp = "da209ac989afedb37fb41a712db30a5dd31342549f3ce8b4c30a6830b9718510"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "b6fb5c1f-2d68-5197-9480-79e819221f06"
+                                    string stamp = "da209ac989afedb37fb41a712db30a5dd31342549f3ce8b4c30a6830b9718510"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.3499999999999999 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "b6fb5c1f-2d68-5197-9480-79e819221f06"
+                                    string stamp = "da209ac989afedb37fb41a712db30a5dd31342549f3ce8b4c30a6830b9718510"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_006" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 21 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "92583644-fb81-568e-9d67-db570ddfbc35"
+                                    string stamp = "44429de8d4345fa5e9b4b44cc0f9a6c52c44dec6b986f91c1642e77b77560206"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "92583644-fb81-568e-9d67-db570ddfbc35"
+                                    string stamp = "44429de8d4345fa5e9b4b44cc0f9a6c52c44dec6b986f91c1642e77b77560206"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 7 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "92583644-fb81-568e-9d67-db570ddfbc35"
+                                    string stamp = "44429de8d4345fa5e9b4b44cc0f9a6c52c44dec6b986f91c1642e77b77560206"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.15 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "92583644-fb81-568e-9d67-db570ddfbc35"
+                                    string stamp = "44429de8d4345fa5e9b4b44cc0f9a6c52c44dec6b986f91c1642e77b77560206"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_007" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "0302fe84-3c81-5885-a93b-c43def48d49b"
+                                    string stamp = "d13ecdb21dd8e03a87bbf8813f099c9c7530f53518b94a54a26c60207b7c1de2"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "0302fe84-3c81-5885-a93b-c43def48d49b"
+                                    string stamp = "d13ecdb21dd8e03a87bbf8813f099c9c7530f53518b94a54a26c60207b7c1de2"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "0302fe84-3c81-5885-a93b-c43def48d49b"
+                                    string stamp = "d13ecdb21dd8e03a87bbf8813f099c9c7530f53518b94a54a26c60207b7c1de2"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "0302fe84-3c81-5885-a93b-c43def48d49b"
+                                    string stamp = "d13ecdb21dd8e03a87bbf8813f099c9c7530f53518b94a54a26c60207b7c1de2"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_008" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "530201f9-f6d4-5b5e-9d79-94bbc0ed39b0"
+                                    string stamp = "25a643b2de490ba997fb07ae2f504d353e86384603cc41ab3e0a066e5e243baf"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "530201f9-f6d4-5b5e-9d79-94bbc0ed39b0"
+                                    string stamp = "25a643b2de490ba997fb07ae2f504d353e86384603cc41ab3e0a066e5e243baf"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "530201f9-f6d4-5b5e-9d79-94bbc0ed39b0"
+                                    string stamp = "25a643b2de490ba997fb07ae2f504d353e86384603cc41ab3e0a066e5e243baf"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "530201f9-f6d4-5b5e-9d79-94bbc0ed39b0"
+                                    string stamp = "25a643b2de490ba997fb07ae2f504d353e86384603cc41ab3e0a066e5e243baf"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_009" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "e5c92fc0-698f-534a-8475-92dee2e044f5"
+                                    string stamp = "6b2d02f32ce662b37462a63cb8874050a98c42fb1eea91e5ea21a3372d17a58e"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "e5c92fc0-698f-534a-8475-92dee2e044f5"
+                                    string stamp = "6b2d02f32ce662b37462a63cb8874050a98c42fb1eea91e5ea21a3372d17a58e"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "e5c92fc0-698f-534a-8475-92dee2e044f5"
+                                    string stamp = "6b2d02f32ce662b37462a63cb8874050a98c42fb1eea91e5ea21a3372d17a58e"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 2.6999999999999997 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "e5c92fc0-698f-534a-8475-92dee2e044f5"
+                                    string stamp = "6b2d02f32ce662b37462a63cb8874050a98c42fb1eea91e5ea21a3372d17a58e"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_h_010" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 45 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "48299598-bfc7-5763-ada4-afcbcd8810d4"
+                                    string stamp = "397315bd7317a19c36f92ae5ded9e62c4877e89308c12ed4bb18d2f413f5a399"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "48299598-bfc7-5763-ada4-afcbcd8810d4"
+                                    string stamp = "397315bd7317a19c36f92ae5ded9e62c4877e89308c12ed4bb18d2f413f5a399"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 15 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "48299598-bfc7-5763-ada4-afcbcd8810d4"
+                                    string stamp = "397315bd7317a19c36f92ae5ded9e62c4877e89308c12ed4bb18d2f413f5a399"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 13.5 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "48299598-bfc7-5763-ada4-afcbcd8810d4"
+                                    string stamp = "397315bd7317a19c36f92ae5ded9e62c4877e89308c12ed4bb18d2f413f5a399"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_011" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 27 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "9c86f5b4-b28a-537d-921a-7d491e761eef"
+                                    string stamp = "84b2d1e374b7d98070cc00d684af57426f8d0ddeec75ef2e6fb971cd2d80d254"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "9c86f5b4-b28a-537d-921a-7d491e761eef"
+                                    string stamp = "84b2d1e374b7d98070cc00d684af57426f8d0ddeec75ef2e6fb971cd2d80d254"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "9c86f5b4-b28a-537d-921a-7d491e761eef"
+                                    string stamp = "84b2d1e374b7d98070cc00d684af57426f8d0ddeec75ef2e6fb971cd2d80d254"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 8.1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "9c86f5b4-b28a-537d-921a-7d491e761eef"
+                                    string stamp = "84b2d1e374b7d98070cc00d684af57426f8d0ddeec75ef2e6fb971cd2d80d254"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_012" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "93bc6518-e4e4-5b31-9ed8-57d271460047"
+                                    string stamp = "be2a0c57027ee14f9bf3533a56f4abefbb9318d02b27c4f037843e5aff77546e"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "93bc6518-e4e4-5b31-9ed8-57d271460047"
+                                    string stamp = "be2a0c57027ee14f9bf3533a56f4abefbb9318d02b27c4f037843e5aff77546e"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "93bc6518-e4e4-5b31-9ed8-57d271460047"
+                                    string stamp = "be2a0c57027ee14f9bf3533a56f4abefbb9318d02b27c4f037843e5aff77546e"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 2.6999999999999997 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "93bc6518-e4e4-5b31-9ed8-57d271460047"
+                                    string stamp = "be2a0c57027ee14f9bf3533a56f4abefbb9318d02b27c4f037843e5aff77546e"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_013" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "7b1263c6-f269-5ad7-b2a4-d7d6d2798e30"
+                                    string stamp = "dc924a3b6cc2fe0a7b45e2e99d4d61cfd00feb89575a72ff2b8d603f2640122c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "7b1263c6-f269-5ad7-b2a4-d7d6d2798e30"
+                                    string stamp = "dc924a3b6cc2fe0a7b45e2e99d4d61cfd00feb89575a72ff2b8d603f2640122c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "7b1263c6-f269-5ad7-b2a4-d7d6d2798e30"
+                                    string stamp = "dc924a3b6cc2fe0a7b45e2e99d4d61cfd00feb89575a72ff2b8d603f2640122c"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.3499999999999999 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "7b1263c6-f269-5ad7-b2a4-d7d6d2798e30"
+                                    string stamp = "dc924a3b6cc2fe0a7b45e2e99d4d61cfd00feb89575a72ff2b8d603f2640122c"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_014" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 27 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "446e8413-727f-5c83-b63c-b41018bc5c7a"
+                                    string stamp = "5bde0647b73ed0c7e9b334fb2c3587071963e5d890b4622dec3d7c085fb373fa"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "446e8413-727f-5c83-b63c-b41018bc5c7a"
+                                    string stamp = "5bde0647b73ed0c7e9b334fb2c3587071963e5d890b4622dec3d7c085fb373fa"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "446e8413-727f-5c83-b63c-b41018bc5c7a"
+                                    string stamp = "5bde0647b73ed0c7e9b334fb2c3587071963e5d890b4622dec3d7c085fb373fa"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 4.05 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "446e8413-727f-5c83-b63c-b41018bc5c7a"
+                                    string stamp = "5bde0647b73ed0c7e9b334fb2c3587071963e5d890b4622dec3d7c085fb373fa"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_015" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "9a5d68d2-9185-559d-beaa-a8501b814fc9"
+                                    string stamp = "52dfd47d2b20a0ade7b97d303a451970c0ba34a4c8cb51248c27b8c9508fe041"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "9a5d68d2-9185-559d-beaa-a8501b814fc9"
+                                    string stamp = "52dfd47d2b20a0ade7b97d303a451970c0ba34a4c8cb51248c27b8c9508fe041"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "9a5d68d2-9185-559d-beaa-a8501b814fc9"
+                                    string stamp = "52dfd47d2b20a0ade7b97d303a451970c0ba34a4c8cb51248c27b8c9508fe041"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 1.7999999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "9a5d68d2-9185-559d-beaa-a8501b814fc9"
+                                    string stamp = "52dfd47d2b20a0ade7b97d303a451970c0ba34a4c8cb51248c27b8c9508fe041"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_016" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 24.599999999999998 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "8f507a9f-9bfb-516d-9f0c-89509e1ef5d9"
+                                    string stamp = "923c7950b74c375e79d3b8a363cb2051cc389126151c75c948a84a158355fd53"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "8f507a9f-9bfb-516d-9f0c-89509e1ef5d9"
+                                    string stamp = "923c7950b74c375e79d3b8a363cb2051cc389126151c75c948a84a158355fd53"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 8.2 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "8f507a9f-9bfb-516d-9f0c-89509e1ef5d9"
+                                    string stamp = "923c7950b74c375e79d3b8a363cb2051cc389126151c75c948a84a158355fd53"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.6899999999999995 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "8f507a9f-9bfb-516d-9f0c-89509e1ef5d9"
+                                    string stamp = "923c7950b74c375e79d3b8a363cb2051cc389126151c75c948a84a158355fd53"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_017" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 12 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "d6b075b8-4846-5ff9-88b7-cf553d4327f0"
+                                    string stamp = "685498c43b8d8ceb574e8a00f9a04fd1444e86c2980e760e18874a897254c7b9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "d6b075b8-4846-5ff9-88b7-cf553d4327f0"
+                                    string stamp = "685498c43b8d8ceb574e8a00f9a04fd1444e86c2980e760e18874a897254c7b9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 4 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "d6b075b8-4846-5ff9-88b7-cf553d4327f0"
+                                    string stamp = "685498c43b8d8ceb574e8a00f9a04fd1444e86c2980e760e18874a897254c7b9"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 3.5999999999999996 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "d6b075b8-4846-5ff9-88b7-cf553d4327f0"
+                                    string stamp = "685498c43b8d8ceb574e8a00f9a04fd1444e86c2980e760e18874a897254c7b9"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_018" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 15 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "973c7b4b-3366-5de0-936c-7d07380d4074"
+                                    string stamp = "e88c1c20ef7e9a4484cb8fdd74dfc84af07a5f613593c3d3fab8ab1f8d92d074"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "973c7b4b-3366-5de0-936c-7d07380d4074"
+                                    string stamp = "e88c1c20ef7e9a4484cb8fdd74dfc84af07a5f613593c3d3fab8ab1f8d92d074"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 5 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "973c7b4b-3366-5de0-936c-7d07380d4074"
+                                    string stamp = "e88c1c20ef7e9a4484cb8fdd74dfc84af07a5f613593c3d3fab8ab1f8d92d074"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 4.5 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "973c7b4b-3366-5de0-936c-7d07380d4074"
+                                    string stamp = "e88c1c20ef7e9a4484cb8fdd74dfc84af07a5f613593c3d3fab8ab1f8d92d074"
+                                }
+                            }
+                        }
+                    )
+                }
+
+                over "wall_l2_v_019" (
+                    prepend apiSchemas = ["AecoQuantityAPI"]
+                )
+                {
+                    double aeco:qto:area = 9 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-body-height-gross"
+                                    string source = "14c8a6ad-3fac-55a7-9dd1-06df33865f5c"
+                                    string stamp = "cdd9e9a46819444237a84ffd750b87d2e6c884da69d17a4db3aea5d27556d546"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:count = 1 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "element-occurrence"
+                                    string source = "14c8a6ad-3fac-55a7-9dd1-06df33865f5c"
+                                    string stamp = "cdd9e9a46819444237a84ffd750b87d2e6c884da69d17a4db3aea5d27556d546"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:length = 3 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-line"
+                                    string source = "14c8a6ad-3fac-55a7-9dd1-06df33865f5c"
+                                    string stamp = "cdd9e9a46819444237a84ffd750b87d2e6c884da69d17a4db3aea5d27556d546"
+                                }
+                            }
+                        }
+                    )
+                    double aeco:qto:volume = 2.6999999999999997 (
+                        customData = {
+                            dictionary aeco = {
+                                dictionary qto = {
+                                    string method = "axis-build-up-body-height-gross"
+                                    string source = "14c8a6ad-3fac-55a7-9dd1-06df33865f5c"
+                                    string stamp = "cdd9e9a46819444237a84ffd750b87d2e6c884da69d17a4db3aea5d27556d546"
+                                }
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
+

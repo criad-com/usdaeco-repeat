@@ -1,0 +1,92 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    fallbackPrimTypes = {
+        token[] AecoFacility = ["Xform"]
+        token[] AecoLevel = ["Xform"]
+        token[] AecoSite = ["Xform"]
+    }
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def AecoSite "Site"
+    {
+        string aeco:id = "88debc93-66f2-578f-9253-82faff04e050"
+
+        def AecoFacility "Facility"
+        {
+            string aeco:id = "221feb22-b46b-5746-9c2d-faae69ec6393"
+
+            def AecoLevel "L01"
+            {
+                double aeco:elevation = 0
+                string aeco:id = "e21bbaed-725d-52c9-bfd1-782111caece8"
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                def Xform "Partition" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                )
+                {
+                    custom point3d aeco:axis:end = (4, 0, 0)
+                    custom point3d aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:id = "b119ec90-431b-5cff-a97c-e78ae3d25686"
+
+                    def Mesh "Body" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "b119ec90-431b-5cff-a97c-e78ae3d25686"
+                        string aeco:derived:stamp = "fixture-v1"
+                        int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                        int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                        point3f[] points = [(0, 0, 0), (4, 0, 0), (4, 0.2, 0), (0, 0.2, 0), (0, 0, 3), (4, 0, 3), (4, 0.2, 3), (0, 0.2, 3)]
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+            }
+
+            def AecoLevel "L02" (
+                prepend apiSchemas = ["AecoRepeatAPI"]
+            )
+            {
+                double aeco:elevation = 3
+                string aeco:id = "89e78243-85da-5f2a-8b31-ebbbb940c007"
+                rel aeco:repeat:prototype = </World/Site/Facility/L01>
+                double3 xformOp:translate = (0, 0, 3)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                def Xform "Partition" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                )
+                {
+                    custom point3d aeco:axis:end = (4, 0, 0)
+                    custom point3d aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:id = "cb8eadd0-4c2d-5900-9957-2945752a415a"
+
+                    def Mesh "Body" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "cb8eadd0-4c2d-5900-9957-2945752a415a"
+                        string aeco:derived:stamp = "fixture-v1"
+                        int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+                        int[] faceVertexIndices = [0, 3, 2, 1, 4, 5, 6, 7, 0, 1, 5, 4, 1, 2, 6, 5, 2, 3, 7, 6, 3, 0, 4, 7]
+                        point3f[] points = [(0, 0, 0), (4, 0, 0), (4, 0.2, 0), (0, 0.2, 0), (0, 0, 3), (4, 0, 3), (4, 0.2, 3), (0, 0.2, 3)]
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+            }
+        }
+    }
+}
+

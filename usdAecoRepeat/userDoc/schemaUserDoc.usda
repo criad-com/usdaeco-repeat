@@ -1,0 +1,14 @@
+#usda 1.0
+(
+    subLayers = [@../schema.usda@]
+)
+over "AecoRepeatAPI" (
+    customData = {
+        string userDocBrief = "A spatial container repeating a prototype with explicit deviations."
+    }
+) {}
+over "AecoQuantityAPI" (
+    customData = {
+        string userDocBrief = "Measured, source-stamped IFC Qto-shaped base quantities."
+    }
+) {}

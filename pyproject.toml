@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usdaeco-repeat"
+version = "0.2.0"
+requires-python = ">=3.11"
+dependencies = ["usdaeco-toolchain>=0.3.8,<0.4"]
+
+[project.scripts]
+aeco-repeat = "usdaeco_repeat.cli:main"
+
+[tool.setuptools]
+packages = ["usdaeco_repeat", "usdAecoRepeatValidators"]
+package-dir = {usdaeco_repeat = "tools/usdaeco_repeat", usdAecoRepeatValidators = "usdAecoRepeatValidators"}
+
+[tool.setuptools.package-data]
+usdAecoRepeatValidators = ["plugInfo.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["testenv"]
+python_files = ["test*.py"]

@@ -1,0 +1,1986 @@
+#usda 1.0
+(
+    defaultPrim = "demo_datacentre_01"
+    fallbackPrimTypes = {
+        token[] AecoFacility = ["Xform"]
+        token[] AecoFacilityPart = ["Xform"]
+        token[] AecoLevel = ["Xform"]
+        token[] AecoPort = ["Xform"]
+        token[] AecoSite = ["Xform"]
+        token[] AecoSpace = ["Xform"]
+        token[] AecoSystem = ["Scope"]
+        token[] AecoZone = ["Scope"]
+    }
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "demo_datacentre_01" (
+    apiSchemas = ["AecoProjectAPI"]
+)
+{
+    string aeco:project:id = "0c4e53f3-56fb-50d8-a287-1ee80e4e5f1f"
+    string aeco:project:name = "demo-datacentre-01"
+
+    def AecoSite "demo_datacentre_01_Site" (
+        apiSchemas = ["AecoClassificationAPI:ifc"]
+    )
+    {
+        string aeco:class:ifc:code = "IfcSite"
+        string aeco:class:ifc:name = "demo-datacentre-01 Site"
+        string aeco:id = "8565d6cd-0479-54e9-87f5-f044966073bc"
+
+        def AecoFacility "demo_datacentre_01" (
+            apiSchemas = ["AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcBuilding"
+            string aeco:class:ifc:name = "demo-datacentre-01"
+            string aeco:id = "a9b54027-a170-5ea3-ade1-dec011ba680e"
+
+            def AecoLevel "L01_Office" (
+                prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+            )
+            {
+                string aeco:class:ifc:code = "IfcBuildingStorey"
+                string aeco:class:ifc:name = "L01 Office"
+                double aeco:elevation = 4
+                string aeco:id = "05fc4eac-b98d-5d67-81f7-a34191f2ad20"
+                custom string aeco:props:DC_Identity:Discipline = "coordination"
+                custom string aeco:props:DC_Identity:Id = "lvl.l1"
+                custom string aeco:props:Pset_BuildingStoreyCommon:Status = "NEW"
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 4, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def AecoSpace "Kitchen_Break" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Kitchen & Break"
+                    string aeco:id = "02a16cfa-0423-524e-8447-88d1b328b9c6"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.kitchen"
+                    custom string aeco:props:DC_Space:SpaceType = "kitchen"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.kitchen"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 20
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 60
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -4, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Extent" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "extent"
+                        string aeco:derived:source = "02a16cfa-0423-524e-8447-88d1b328b9c6"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-2, -2.5, 0), (2, 2.5, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                        point3f[] points = [(-2, -2.5, 0), (-2, -2.5, 3), (2, -2.5, 3), (2, -2.5, 0), (2, 2.5, 3), (2, 2.5, 0), (-2, 2.5, 3), (-2, 2.5, 0)]
+                        color3f[] primvars:displayColor = [(0.65, 0.75, 0.8)]
+                        uniform token purpose = "guide"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (28, -5.5, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                def AecoSpace "Open_Office" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Open Office"
+                    string aeco:id = "08c1554d-a7cb-5fb1-b834-10b3c55ab8cd"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.office"
+                    custom string aeco:props:DC_Space:SpaceType = "office"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.office"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 90
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 270
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -4, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Extent" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "extent"
+                        string aeco:derived:source = "08c1554d-a7cb-5fb1-b834-10b3c55ab8cd"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-5, -4.5, 0), (5, 4.5, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 2, 2, 0, 3, 2, 3, 5, 4, 2, 5, 4, 5, 6, 6, 5, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                        point3f[] points = [(-5, -4.5, 0), (-5, -4.5, 3), (5, -4.5, 3), (5, -4.5, 0), (5, 4.5, 3), (5, 4.5, 0), (-5, 4.5, 3), (-5, 4.5, 0)]
+                        color3f[] primvars:displayColor = [(0.65, 0.75, 0.8)]
+                        uniform token purpose = "guide"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17, -7.5, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                def Xform "wall_l1_v_017" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (4, 0, 0)
+                    double aeco:axis:length = 4
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.v.017"
+                    string aeco:id = "17fabf2a-db55-5b3d-acbe-4cc963ed34b0"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.017"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 12
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 3.5999999999999996
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 4
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (30, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "17fabf2a-db55-5b3d-acbe-4cc963ed34b0"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (4, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (4, 0.15, 3), (4, 0.15, 0), (4, -0.15, 3), (4, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_h_001" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (10, 0, 0)
+                    double aeco:axis:length = 10
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.h.001"
+                    string aeco:id = "1aba178f-cac6-5655-9fb3-22c675cc2dd7"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.001"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 30
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 10
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "1aba178f-cac6-5655-9fb3-22c675cc2dd7"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (10, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 4, 3, 2, 5, 3, 4, 7, 5, 4, 7, 4, 6, 1, 7, 6, 0, 7, 1, 0, 5, 7, 3, 5, 0, 6, 4, 1, 1, 4, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (10, 0.15, 3), (10, 0.15, 0), (10, -0.15, 3), (10, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_v_014" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (9, 0, 0)
+                    double aeco:axis:length = 9
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.v.014"
+                    string aeco:id = "2a39d1c5-51fc-50c0-b5ab-579342c7c597"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.014"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 27
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 4.05
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (22, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "2a39d1c5-51fc-50c0-b5ab-579342c7c597"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, 0), (9, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.075, 0), (0, -0.075, 3), (0, 0.075, 3), (0, 0.075, 0), (9, 0.075, 3), (9, 0.075, 0), (9, -0.075, 3), (9, -0.075, 0)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def AecoSpace "Stair_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Stair L01"
+                    string aeco:id = "e0c7c2e3-3201-560f-84c9-8cbb69ca4804"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.stair.1"
+                    custom string aeco:props:DC_Space:SpaceType = "stair"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.stair.1"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 9
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 27
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -4, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Xform "Office_Stair" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcStair.STRAIGHT_RUN_STAIR"
+                        string aeco:class:ifc:name = "Office Stair"
+                        string aeco:id = "433acb7c-dbba-5481-96c6-de9afd976ddd"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "arch.stair.2"
+                        custom bool aeco:props:Pset_StairCommon:IsExternal = 0
+                        custom string aeco:props:Pset_StairCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (0, 1, 0, 0), (0, 0, 1, 0), (1, 0, 0, 0), (12.9, -2.9, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geom" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "433acb7c-dbba-5481-96c6-de9afd976ddd"
+                            string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                            uniform bool doubleSided = 1
+                            float3[] extent = [(0, 0, 0), (2.8, 3, 1.2)]
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 9, 8, 6, 9, 8, 9, 11, 10, 8, 11, 10, 11, 0, 1, 10, 0, 3, 11, 9, 5, 3, 7, 3, 9, 7, 11, 3, 0, 8, 10, 2, 6, 2, 4, 6, 8, 2, 1, 2, 10]
+                            point3f[] points = [(0, 0, 0), (0, 0, 1.2), (1.5, 2.7, 1.2), (1.5, 2.7, 0), (2.8, 2.7, 1.2), (2.8, 2.7, 0), (2.8, 3, 1.2), (2.8, 3, 0), (1.5, 3, 1.2), (1.5, 3, 0), (0, 0.3, 1.2), (0, 0.3, 0)]
+                            color3f[] primvars:displayColor = [(0.62, 0.62, 0.6)]
+                        }
+                    }
+
+                    def Mesh "Extent" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "extent"
+                        string aeco:derived:source = "e0c7c2e3-3201-560f-84c9-8cbb69ca4804"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-1.5, -1.5, 0), (1.5, 1.5, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                        point3f[] points = [(-1.5, -1.5, 0), (-1.5, -1.5, 3), (1.5, -1.5, 3), (1.5, -1.5, 0), (1.5, 1.5, 3), (1.5, 1.5, 0), (-1.5, 1.5, 3), (-1.5, 1.5, 0)]
+                        color3f[] primvars:displayColor = [(0.65, 0.75, 0.8)]
+                        uniform token purpose = "guide"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (13.5, -1.5, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                def Xform "wall_l1_h_008" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (4, 0, 0)
+                    double aeco:axis:length = 4
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.h.008"
+                    string aeco:id = "43540151-c12f-56c9-b032-2b64fd66c8e4"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.008"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 12
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 1.7999999999999998
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 4
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (26, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "43540151-c12f-56c9-b032-2b64fd66c8e4"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, -2.220446e-16), (4, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 4, 5, 3, 4, 2, 4, 6, 7, 4, 7, 5, 7, 8, 9, 6, 8, 7, 9, 8, 11, 10, 9, 11, 10, 11, 13, 12, 10, 13, 13, 14, 15, 13, 15, 12, 14, 0, 1, 14, 1, 15, 0, 14, 4, 13, 6, 4, 13, 4, 14, 3, 0, 4, 11, 8, 6, 11, 6, 13, 5, 15, 1, 5, 7, 12, 15, 5, 12, 5, 1, 2, 7, 9, 10, 12, 7, 10]
+                        point3f[] points = [(4, -0.075, 0), (4, 0.075, 0), (2.45, 0.075, -2.220446e-16), (2.45, -0.075, -2.220446e-16), (2.45, -0.075, 2.1), (2.45, 0.075, 2.1), (1.55, -0.075, 2.1), (1.55, 0.075, 2.1), (1.55, -0.075, -2.220446e-16), (1.55, 0.075, -2.220446e-16), (0, 0.075, 0), (0, -0.075, 0), (0, 0.075, 3), (0, -0.075, 3), (4, -0.075, 3), (4, 0.075, 3)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def Xform "wall_l1_h_002" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (4, 0, 0)
+                    double aeco:axis:length = 4
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.h.002"
+                    string aeco:id = "4556958a-1b5c-5eeb-89a9-7cf49af08c5a"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.002"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 12
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 3.5999999999999996
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 4
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (22, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "4556958a-1b5c-5eeb-89a9-7cf49af08c5a"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (4, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (4, 0.15, 3), (4, 0.15, 0), (4, -0.15, 3), (4, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_h_010" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (15, 0, 0)
+                    double aeco:axis:length = 15
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.h.010"
+                    string aeco:id = "46bb8ddc-66ac-5ee6-ba2f-72feb5bf8844"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.010"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 45
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 13.5
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 15
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "46bb8ddc-66ac-5ee6-ba2f-72feb5bf8844"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (15, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (15, 0.15, 3), (15, 0.15, 0), (15, -0.15, 3), (15, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_h_007" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (4, 0, 0)
+                    double aeco:axis:length = 4
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.h.007"
+                    string aeco:id = "51468e7f-5fca-54c5-9547-9c7f5cb51055"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.007"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 12
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 1.7999999999999998
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 4
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (22, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "51468e7f-5fca-54c5-9547-9c7f5cb51055"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, -2.220446e-16), (4, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 4, 5, 3, 4, 2, 4, 6, 7, 4, 7, 5, 7, 8, 9, 6, 8, 7, 9, 8, 11, 10, 9, 11, 10, 11, 13, 12, 10, 13, 13, 14, 15, 13, 15, 12, 14, 0, 1, 14, 1, 15, 0, 14, 4, 13, 6, 4, 13, 4, 14, 3, 0, 4, 11, 8, 6, 11, 6, 13, 5, 15, 1, 5, 7, 12, 15, 5, 12, 5, 1, 2, 7, 9, 10, 12, 7, 10]
+                        point3f[] points = [(4, -0.075, 0), (4, 0.075, 0), (2.45, 0.075, -2.220446e-16), (2.45, -0.075, -2.220446e-16), (2.45, -0.075, 2.1), (2.45, 0.075, 2.1), (1.55, -0.075, 2.1), (1.55, 0.075, 2.1), (1.55, -0.075, -2.220446e-16), (1.55, 0.075, -2.220446e-16), (0, 0.075, 0), (0, -0.075, 0), (0, 0.075, 3), (0, -0.075, 3), (4, -0.075, 3), (4, 0.075, 3)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def Xform "wall_l1_v_013" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (3, 0, 0)
+                    double aeco:axis:length = 3
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.v.013"
+                    string aeco:id = "54f3cd30-3297-5932-8281-adfb776aab7d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.013"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 1.3499999999999999
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (15, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "54f3cd30-3297-5932-8281-adfb776aab7d"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, -2.220446e-16), (3, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 4, 4, 3, 5, 4, 5, 7, 6, 4, 7, 6, 7, 8, 8, 7, 9, 8, 9, 11, 10, 8, 11, 10, 11, 13, 12, 10, 13, 13, 14, 15, 13, 15, 12, 14, 0, 1, 14, 1, 15, 0, 14, 5, 13, 7, 5, 13, 5, 14, 3, 0, 5, 11, 9, 7, 11, 7, 13, 4, 15, 1, 4, 6, 12, 15, 4, 12, 4, 1, 2, 6, 8, 10, 12, 6, 10]
+                        point3f[] points = [(3, -0.075, 0), (3, 0.075, 0), (1.95, 0.075, -2.220446e-16), (1.95, -0.075, -2.220446e-16), (1.95, 0.075, 2.1), (1.95, -0.075, 2.1), (1.05, 0.075, 2.1), (1.05, -0.075, 2.1), (1.05, 0.075, -2.220446e-16), (1.05, -0.075, -2.220446e-16), (0, 0.075, 0), (0, -0.075, 0), (0, 0.075, 3), (0, -0.075, 3), (3, -0.075, 3), (3, 0.075, 3)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def AecoSpace "Office_Corridor_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Office Corridor L01"
+                    string aeco:id = "f455f79e-95a1-53af-b17c-a819532eef3e"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.ocorr.1"
+                    custom string aeco:props:DC_Space:SpaceType = "corridor"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.ocorr.1"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 45
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 135
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -4, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Xform "sec_cam_corr_ocorr_1_2" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.1.2"
+                        string aeco:id = "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.1.2"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 180.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 180
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (29.5, -1.5, 6.9, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geom" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "5c516ad4-57b5-5ffe-9468-cf14e42e9ae0"
+                            string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                            uniform bool doubleSided = 1
+                            float3[] extent = [(-0.08, -0.08, 0), (0.08, 0.08, 0.1)]
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                            point3f[] points = [(-0.08, -0.08, 0), (-0.08, -0.08, 0.1), (0.08, -0.08, 0.1), (0.08, -0.08, 0), (0.08, 0.08, 0.1), (0.08, 0.08, 0), (-0.08, 0.08, 0.1), (-0.08, 0.08, 0)]
+                            color3f[] primvars:displayColor = [(0.45, 0.2, 0.55)]
+                        }
+                    }
+
+                    def Xform "sec_cam_corr_ocorr_1_1" (
+                        prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                        prepend inherits = </demo_datacentre_01/_TypeCatalog/dome_5mp>
+                    )
+                    {
+                        string aeco:class:ifc:code = "IfcAudioVisualAppliance.CAMERA"
+                        string aeco:class:ifc:name = "sec.cam.corr.ocorr.1.1"
+                        string aeco:id = "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+                        uniform token aeco:phase = "proposed"
+                        custom string aeco:props:DC_Identity:Discipline = "coordination"
+                        custom string aeco:props:DC_Identity:Id = "sec.cam.corr.ocorr.1.1"
+                        custom string aeco:props:DC_Identity:System = "sys.sec"
+                        custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+                        custom string aeco:props:Pset_AecoCctv:Drivers = '{"aeco:cctv:mount": "pendant", "aeco:cctv:scenario": "corridor"}'
+                        custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalLength": 4.0, "aeco:cctvSensor:pan": 0.0, "aeco:cctvSensor:range": 24.0, "aeco:cctvSensor:roll": 0.0, "aeco:cctvSensor:targetDensity": 250.0, "aeco:cctvSensor:tilt": 15.0}, "name": "Sensor_0", "presets": {}, "tour": []}]'
+                        custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCamera:CameraType = "VIDEO"
+                        custom bool aeco:props:Pset_AudioVisualApplianceTypeCamera:IsOutdoors = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:PanHorizontal = 0
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:TiltHorizontal = -0.2617993877991494
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionHeight = 1944
+                        custom int aeco:props:Pset_AudioVisualApplianceTypeCamera:VideoResolutionWidth = 2592
+                        custom double aeco:props:Pset_AudioVisualApplianceTypeCamera:Zoom = 0.004
+                        custom string aeco:props:Pset_AudioVisualApplianceTypeCommon:Status = "NEW"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15.5, -1.5, 6.9, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                        def Mesh "Geom" (
+                            prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                        )
+                        {
+                            uniform token aeco:derived:approx = "tessellated"
+                            uniform token aeco:derived:role = "body"
+                            string aeco:derived:source = "85ef0c56-c408-588b-8c84-7efbe9dd3b53"
+                            string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                            uniform bool doubleSided = 1
+                            float3[] extent = [(-0.08, -0.08, 0), (0.08, 0.08, 0.1)]
+                            int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                            int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                            point3f[] points = [(-0.08, -0.08, 0), (-0.08, -0.08, 0.1), (0.08, -0.08, 0.1), (0.08, -0.08, 0), (0.08, 0.08, 0.1), (0.08, 0.08, 0), (-0.08, 0.08, 0.1), (-0.08, 0.08, 0)]
+                            color3f[] primvars:displayColor = [(0.45, 0.2, 0.55)]
+                        }
+                    }
+
+                    def Mesh "Extent" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "extent"
+                        string aeco:derived:source = "f455f79e-95a1-53af-b17c-a819532eef3e"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-7.5, -1.5, 0), (7.5, 1.5, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                        point3f[] points = [(-7.5, -1.5, 0), (-7.5, -1.5, 3), (7.5, -1.5, 3), (7.5, -1.5, 0), (7.5, 1.5, 3), (7.5, 1.5, 0), (-7.5, 1.5, 3), (-7.5, 1.5, 0)]
+                        color3f[] primvars:displayColor = [(0.65, 0.75, 0.8)]
+                        uniform token purpose = "guide"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (22.5, -1.5, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                def Xform "wall_l1_v_019" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (3, 0, 0)
+                    double aeco:axis:length = 3
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.v.019"
+                    string aeco:id = "6401b4a1-b2f1-5eb6-9378-29e500fe9c37"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.019"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 2.6999999999999997
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (30, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "6401b4a1-b2f1-5eb6-9378-29e500fe9c37"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (3, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (3, 0.15, 3), (3, 0.15, 0), (3, -0.15, 3), (3, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_v_012" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (3, 0, 0)
+                    double aeco:axis:length = 3
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.v.012"
+                    string aeco:id = "64c0b776-f5b1-556b-8a27-116d0f4e1b6f"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.012"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 2.6999999999999997
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (12, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "64c0b776-f5b1-556b-8a27-116d0f4e1b6f"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (3, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (3, 0.15, 3), (3, 0.15, 0), (3, -0.15, 3), (3, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "slab_l1_office" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSlab.FLOOR"
+                    string aeco:class:ifc:name = "slab.l1.office"
+                    string aeco:id = "74510da6-0878-5d0a-b122-2a3e782686ae"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "slab.l1.office"
+                    custom bool aeco:props:Pset_SlabCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_SlabCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_SlabCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SlabBaseQuantities:GrossArea = 216
+                    custom double aeco:props:Qto_SlabBaseQuantities:GrossVolume = 54
+                    custom double aeco:props:Qto_SlabBaseQuantities:NetArea = 207
+                    custom double aeco:props:Qto_SlabBaseQuantities:NetVolume = 51.75
+                    custom double aeco:props:Qto_SlabBaseQuantities:Width = 0.25
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -0.25, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "74510da6-0878-5d0a-b122-2a3e782686ae"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(12, -12, 0), (30, 0, 0.25)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 4, 4, 3, 5, 4, 5, 7, 6, 4, 7, 6, 7, 9, 8, 6, 9, 8, 9, 11, 10, 8, 11, 10, 11, 0, 1, 10, 0, 0, 11, 9, 0, 9, 3, 9, 7, 5, 3, 9, 5, 8, 10, 1, 2, 8, 1, 4, 6, 8, 4, 8, 2]
+                        point3f[] points = [(12, -12, 0), (12, -12, 0.25), (30, -12, 0.25), (30, -12, 0), (30, 0, 0.25), (30, 0, 0), (15, 0, 0.25), (15, 0, 0), (15, -3, 0.25), (15, -3, 0), (12, -3, 0.25), (12, -3, 0)]
+                        color3f[] primvars:displayColor = [(0.62, 0.62, 0.6)]
+                    }
+                }
+
+                def Xform "door_kitchen" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Door_Single_900x2100>
+                )
+                {
+                    string aeco:class:ifc:code = "IfcDoor.DOOR"
+                    string aeco:class:ifc:name = "door.kitchen"
+                    string aeco:id = "7a6ebc2a-94b2-5cf5-8a2e-dac1e35b76c1"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_DoorApproach:ApproachNormal = "+Y"
+                    custom string aeco:props:DC_DoorApproach:ApproachSpace = "sp.ocorr.1"
+                    custom double aeco:props:DC_DoorApproach:ThresholdHeight = 1.6
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "door.kitchen"
+                    custom bool aeco:props:Pset_DoorCommon:IsExternal = 0
+                    custom string aeco:props:Pset_DoorCommon:Status = "NEW"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (27.55, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "7a6ebc2a-94b2-5cf5-8a2e-dac1e35b76c1"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-0.025, -0.015, 0), (0.925, 0.1, 2.125)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 9, 8, 6, 9, 8, 9, 11, 10, 8, 11, 10, 11, 13, 12, 10, 13, 12, 13, 15, 14, 12, 15, 14, 15, 0, 1, 14, 0, 7, 5, 11, 9, 7, 11, 0, 15, 13, 13, 11, 3, 11, 5, 3, 0, 13, 3, 10, 4, 6, 10, 6, 8, 12, 14, 1, 2, 10, 12, 2, 4, 10, 2, 12, 1, 17, 16, 19, 18, 17, 19, 18, 19, 21, 20, 18, 21, 20, 21, 23, 22, 20, 23, 22, 23, 25, 24, 22, 25, 24, 25, 27, 26, 24, 27, 26, 27, 29, 28, 26, 29, 28, 29, 31, 30, 28, 31, 30, 31, 16, 17, 30, 16, 23, 21, 27, 25, 23, 27, 16, 31, 29, 29, 27, 19, 27, 21, 19, 16, 29, 19, 26, 20, 22, 26, 22, 24, 28, 30, 17, 18, 26, 28, 18, 20, 26, 18, 28, 17, 33, 32, 35, 34, 33, 35, 34, 35, 37, 36, 34, 37, 36, 37, 39, 38, 36, 39, 38, 39, 32, 33, 38, 32, 35, 32, 37, 32, 39, 37, 36, 33, 34, 36, 38, 33, 41, 40, 43, 42, 41, 43, 42, 43, 45, 44, 42, 45, 44, 45, 47, 46, 44, 47, 46, 47, 49, 48, 46, 49, 48, 49, 51, 50, 48, 51, 50, 51, 53, 52, 50, 53, 52, 53, 55, 54, 52, 55, 54, 55, 40, 41, 54, 40, 47, 45, 51, 49, 47, 51, 40, 55, 53, 53, 51, 43, 51, 45, 43, 40, 53, 43, 50, 44, 46, 50, 46, 48, 52, 54, 41, 42, 50, 52, 42, 44, 50, 42, 52, 41, 57, 56, 59, 58, 57, 59, 58, 59, 61, 60, 58, 61, 60, 61, 63, 62, 60, 63, 62, 63, 65, 64, 62, 65, 64, 65, 67, 66, 64, 67, 66, 67, 69, 68, 66, 69, 68, 69, 71, 70, 68, 71, 70, 71, 56, 57, 70, 56, 63, 61, 67, 65, 63, 67, 56, 71, 69, 69, 67, 59, 67, 61, 59, 56, 69, 59, 66, 60, 62, 66, 62, 64, 68, 70, 57, 58, 66, 68, 58, 60, 66, 58, 68, 57, 73, 72, 75, 74, 73, 75, 74, 75, 77, 76, 74, 77, 76, 77, 79, 78, 76, 79, 78, 79, 72, 73, 78, 72, 75, 72, 77, 72, 79, 77, 76, 73, 74, 76, 78, 73, 83, 80, 81, 83, 81, 82, 85, 83, 82, 85, 82, 84, 87, 85, 84, 87, 84, 86, 89, 87, 86, 89, 86, 88, 91, 89, 88, 91, 88, 90, 80, 91, 90, 80, 90, 81, 89, 80, 83, 91, 80, 89, 85, 89, 83, 87, 89, 85, 82, 81, 88, 88, 81, 90, 82, 88, 84, 84, 88, 86, 93, 92, 95, 94, 93, 95, 94, 95, 97, 96, 94, 97, 96, 97, 99, 98, 96, 99, 98, 99, 101, 100, 98, 101, 100, 101, 103, 102, 100, 103, 102, 103, 92, 93, 102, 92, 99, 97, 101, 92, 103, 101, 92, 101, 95, 101, 97, 95, 100, 96, 98, 100, 102, 93, 94, 100, 93, 94, 96, 100]
+                        point3f[] points = [(0, 0.025, 0), (0, 0.05, 0), (0, 0.05, 2.1), (0, 0.025, 2.1), (0.9, 0.05, 2.1), (0.9, 0.025, 2.1), (0.9, 0.05, 0), (0.9, 0.025, 0), (0.875, 0.05, 0), (0.875, 0.025, 0), (0.875, 0.05, 2.075), (0.875, 0.025, 2.075), (0.025, 0.05, 2.075), (0.025, 0.025, 2.075), (0.025, 0.05, 0), (0.025, 0.025, 0), (0, 0, 0), (0, 0.025, 0), (0, 0.025, 2.1), (0, 0, 2.1), (0.9, 0.025, 2.1), (0.9, 0, 2.1), (0.9, 0.025, 0), (0.9, 0, 0), (0.85, 0.025, 0), (0.85, 0, 0), (0.85, 0.025, 2.05), (0.85, 0, 2.05), (0.05, 0.025, 2.05), (0.05, 0, 2.05), (0.05, 0.025, 0), (0.05, 0, 0), (0.05, 0, 0), (0.05, 0, 0.025), (0.85, 0, 0.025), (0.85, 0, 0), (0.85, 0.1, 0.025), (0.85, 0.1, 0), (0.05, 0.1, 0.025), (0.05, 0.1, 0), (-0.025, -0.005, 0), (-0.025, 0, 0), (-0.025, 0, 2.125), (-0.025, -0.005, 2.125), (0.925, 0, 2.125), (0.925, -0.005, 2.125), (0.925, 0, 0), (0.925, -0.005, 0), (0.85, 0, 0), (0.85, -0.005, 0), (0.85, 0, 2.05), (0.85, -0.005, 2.05), (0.05, 0, 2.05), (0.05, -0.005, 2.05), (0.05, 0, 0), (0.05, -0.005, 0), (-0.025, 0.05, 0), (-0.025, 0.055, 0), (-0.025, 0.055, 2.125), (-0.025, 0.05, 2.125), (0.925, 0.055, 2.125), (0.925, 0.05, 2.125), (0.925, 0.055, 0), (0.925, 0.05, 0), (0.875, 0.055, 0), (0.875, 0.05, 0), (0.875, 0.055, 2.075), (0.875, 0.05, 2.075), (0.025, 0.055, 2.075), (0.025, 0.05, 2.075), (0.025, 0.055, 0), (0.025, 0.05, 0), (0.025, 0.025, 0.025), (0.025, 0.025, 2.075), (0.875, 0.025, 2.075), (0.875, 0.025, 0.025), (0.875, 0.06, 2.075), (0.875, 0.06, 0.025), (0.025, 0.06, 2.075), (0.025, 0.06, 0.025), (0.825, 0.025, 1.015), (0.825, 0.025, 1.035), (0.825, -0.015, 1.035), (0.825, -0.015, 1.015), (0.705, -0.015, 1.035), (0.705, -0.015, 1.015), (0.705, 0.005, 1.035), (0.705, 0.005, 1.015), (0.805, 0.005, 1.035), (0.805, 0.005, 1.015), (0.805, 0.025, 1.035), (0.805, 0.025, 1.015), (0.825, 0.06, 1.015), (0.825, 0.06, 1.035), (0.825, 0.1, 1.035), (0.825, 0.1, 1.015), (0.705, 0.1, 1.035), (0.705, 0.1, 1.015), (0.705, 0.08, 1.035), (0.705, 0.08, 1.015), (0.805, 0.08, 1.035), (0.805, 0.08, 1.015), (0.805, 0.06, 1.035), (0.805, 0.06, 1.015)]
+                        color3f[] primvars:displayColor = [(0.45, 0.47, 0.5)]
+                    }
+                }
+
+                def Xform "door_stair_1" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Door_Single_900x2100>
+                )
+                {
+                    string aeco:class:ifc:code = "IfcDoor.DOOR"
+                    string aeco:class:ifc:name = "door.stair.1"
+                    string aeco:id = "9321b2ab-7e62-5a34-bd1b-4dd41c818ca2"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_DoorApproach:ApproachNormal = "+X"
+                    custom string aeco:props:DC_DoorApproach:ApproachSpace = "sp.ocorr.1"
+                    custom double aeco:props:DC_DoorApproach:ThresholdHeight = 1.6
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "door.stair.1"
+                    custom bool aeco:props:Pset_DoorCommon:IsExternal = 0
+                    custom string aeco:props:Pset_DoorCommon:Status = "NEW"
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (15, -1.95, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "9321b2ab-7e62-5a34-bd1b-4dd41c818ca2"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-0.025, -0.015, 0), (0.925, 0.1, 2.125)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 9, 8, 6, 9, 8, 9, 11, 10, 8, 11, 10, 11, 13, 12, 10, 13, 12, 13, 15, 14, 12, 15, 14, 15, 0, 1, 14, 0, 7, 5, 11, 9, 7, 11, 0, 15, 13, 13, 11, 3, 11, 5, 3, 0, 13, 3, 10, 4, 6, 10, 6, 8, 12, 14, 1, 2, 10, 12, 2, 4, 10, 2, 12, 1, 17, 16, 19, 18, 17, 19, 18, 19, 21, 20, 18, 21, 20, 21, 23, 22, 20, 23, 22, 23, 25, 24, 22, 25, 24, 25, 27, 26, 24, 27, 26, 27, 29, 28, 26, 29, 28, 29, 31, 30, 28, 31, 30, 31, 16, 17, 30, 16, 23, 21, 27, 25, 23, 27, 16, 31, 29, 29, 27, 19, 27, 21, 19, 16, 29, 19, 26, 20, 22, 26, 22, 24, 28, 30, 17, 18, 26, 28, 18, 20, 26, 18, 28, 17, 33, 32, 35, 34, 33, 35, 34, 35, 37, 36, 34, 37, 36, 37, 39, 38, 36, 39, 38, 39, 32, 33, 38, 32, 35, 32, 37, 32, 39, 37, 36, 33, 34, 36, 38, 33, 41, 40, 43, 42, 41, 43, 42, 43, 45, 44, 42, 45, 44, 45, 47, 46, 44, 47, 46, 47, 49, 48, 46, 49, 48, 49, 51, 50, 48, 51, 50, 51, 53, 52, 50, 53, 52, 53, 55, 54, 52, 55, 54, 55, 40, 41, 54, 40, 47, 45, 51, 49, 47, 51, 40, 55, 53, 53, 51, 43, 51, 45, 43, 40, 53, 43, 50, 44, 46, 50, 46, 48, 52, 54, 41, 42, 50, 52, 42, 44, 50, 42, 52, 41, 57, 56, 59, 58, 57, 59, 58, 59, 61, 60, 58, 61, 60, 61, 63, 62, 60, 63, 62, 63, 65, 64, 62, 65, 64, 65, 67, 66, 64, 67, 66, 67, 69, 68, 66, 69, 68, 69, 71, 70, 68, 71, 70, 71, 56, 57, 70, 56, 63, 61, 67, 65, 63, 67, 56, 71, 69, 69, 67, 59, 67, 61, 59, 56, 69, 59, 66, 60, 62, 66, 62, 64, 68, 70, 57, 58, 66, 68, 58, 60, 66, 58, 68, 57, 73, 72, 75, 74, 73, 75, 74, 75, 77, 76, 74, 77, 76, 77, 79, 78, 76, 79, 78, 79, 72, 73, 78, 72, 75, 72, 77, 72, 79, 77, 76, 73, 74, 76, 78, 73, 83, 80, 81, 83, 81, 82, 85, 83, 82, 85, 82, 84, 87, 85, 84, 87, 84, 86, 89, 87, 86, 89, 86, 88, 91, 89, 88, 91, 88, 90, 80, 91, 90, 80, 90, 81, 89, 80, 83, 91, 80, 89, 85, 89, 83, 87, 89, 85, 82, 81, 88, 88, 81, 90, 82, 88, 84, 84, 88, 86, 93, 92, 95, 94, 93, 95, 94, 95, 97, 96, 94, 97, 96, 97, 99, 98, 96, 99, 98, 99, 101, 100, 98, 101, 100, 101, 103, 102, 100, 103, 102, 103, 92, 93, 102, 92, 99, 97, 101, 92, 103, 101, 92, 101, 95, 101, 97, 95, 100, 96, 98, 100, 102, 93, 94, 100, 93, 94, 96, 100]
+                        point3f[] points = [(0, 0.025, 0), (0, 0.05, 0), (0, 0.05, 2.1), (0, 0.025, 2.1), (0.9, 0.05, 2.1), (0.9, 0.025, 2.1), (0.9, 0.05, 0), (0.9, 0.025, 0), (0.875, 0.05, 0), (0.875, 0.025, 0), (0.875, 0.05, 2.075), (0.875, 0.025, 2.075), (0.025, 0.05, 2.075), (0.025, 0.025, 2.075), (0.025, 0.05, 0), (0.025, 0.025, 0), (0, 0, 0), (0, 0.025, 0), (0, 0.025, 2.1), (0, 0, 2.1), (0.9, 0.025, 2.1), (0.9, 0, 2.1), (0.9, 0.025, 0), (0.9, 0, 0), (0.85, 0.025, 0), (0.85, 0, 0), (0.85, 0.025, 2.05), (0.85, 0, 2.05), (0.05, 0.025, 2.05), (0.05, 0, 2.05), (0.05, 0.025, 0), (0.05, 0, 0), (0.05, 0, 0), (0.05, 0, 0.025), (0.85, 0, 0.025), (0.85, 0, 0), (0.85, 0.1, 0.025), (0.85, 0.1, 0), (0.05, 0.1, 0.025), (0.05, 0.1, 0), (-0.025, -0.005, 0), (-0.025, 0, 0), (-0.025, 0, 2.125), (-0.025, -0.005, 2.125), (0.925, 0, 2.125), (0.925, -0.005, 2.125), (0.925, 0, 0), (0.925, -0.005, 0), (0.85, 0, 0), (0.85, -0.005, 0), (0.85, 0, 2.05), (0.85, -0.005, 2.05), (0.05, 0, 2.05), (0.05, -0.005, 2.05), (0.05, 0, 0), (0.05, -0.005, 0), (-0.025, 0.05, 0), (-0.025, 0.055, 0), (-0.025, 0.055, 2.125), (-0.025, 0.05, 2.125), (0.925, 0.055, 2.125), (0.925, 0.05, 2.125), (0.925, 0.055, 0), (0.925, 0.05, 0), (0.875, 0.055, 0), (0.875, 0.05, 0), (0.875, 0.055, 2.075), (0.875, 0.05, 2.075), (0.025, 0.055, 2.075), (0.025, 0.05, 2.075), (0.025, 0.055, 0), (0.025, 0.05, 0), (0.025, 0.025, 0.025), (0.025, 0.025, 2.075), (0.875, 0.025, 2.075), (0.875, 0.025, 0.025), (0.875, 0.06, 2.075), (0.875, 0.06, 0.025), (0.025, 0.06, 2.075), (0.025, 0.06, 0.025), (0.825, 0.025, 1.015), (0.825, 0.025, 1.035), (0.825, -0.015, 1.035), (0.825, -0.015, 1.015), (0.705, -0.015, 1.035), (0.705, -0.015, 1.015), (0.705, 0.005, 1.035), (0.705, 0.005, 1.015), (0.805, 0.005, 1.035), (0.805, 0.005, 1.015), (0.805, 0.025, 1.035), (0.805, 0.025, 1.015), (0.825, 0.06, 1.015), (0.825, 0.06, 1.035), (0.825, 0.1, 1.035), (0.825, 0.1, 1.015), (0.705, 0.1, 1.035), (0.705, 0.1, 1.015), (0.705, 0.08, 1.035), (0.705, 0.08, 1.015), (0.805, 0.08, 1.035), (0.805, 0.08, 1.015), (0.805, 0.06, 1.035), (0.805, 0.06, 1.015)]
+                        color3f[] primvars:displayColor = [(0.45, 0.47, 0.5)]
+                    }
+                }
+
+                def Xform "wall_l1_h_006" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (7, 0, 0)
+                    double aeco:axis:length = 7
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.h.006"
+                    string aeco:id = "93888444-e546-5ddb-a4ba-166a6073c262"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.006"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 21
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 3.15
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 7
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (15, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "93888444-e546-5ddb-a4ba-166a6073c262"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, -2.220446e-16), (7, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 4, 5, 3, 4, 2, 4, 6, 7, 4, 7, 5, 7, 8, 9, 6, 8, 7, 9, 8, 11, 10, 9, 11, 10, 11, 13, 12, 10, 13, 13, 14, 15, 13, 15, 12, 14, 0, 1, 14, 1, 15, 4, 0, 14, 13, 6, 4, 13, 4, 14, 3, 0, 4, 11, 8, 6, 11, 6, 13, 15, 1, 5, 5, 7, 12, 15, 5, 12, 5, 1, 2, 7, 9, 10, 12, 7, 10]
+                        point3f[] points = [(7, -0.075, 0), (7, 0.075, 0), (2.9, 0.075, -2.220446e-16), (2.9, -0.075, -2.220446e-16), (2.9, -0.075, 2.1), (2.9, 0.075, 2.1), (1.1, -0.075, 2.1), (1.1, 0.075, 2.1), (1.1, -0.075, -2.220446e-16), (1.1, 0.075, -2.220446e-16), (0, 0.075, 0), (0, -0.075, 0), (0, 0.075, 3), (0, -0.075, 3), (7, -0.075, 3), (7, 0.075, 3)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def Xform "wall_l1_h_004" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (4, 0, 0)
+                    double aeco:axis:length = 4
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.h.004"
+                    string aeco:id = "9765b9c4-40bb-5ff7-a2a5-cdebad75b0bc"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.004"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 12
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 1.7999999999999998
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 4
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (26, -8, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "9765b9c4-40bb-5ff7-a2a5-cdebad75b0bc"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, -2.220446e-16), (4, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 4, 5, 3, 4, 2, 4, 6, 7, 4, 7, 5, 7, 8, 9, 6, 8, 7, 9, 8, 11, 10, 9, 11, 10, 11, 13, 12, 10, 13, 13, 14, 15, 13, 15, 12, 14, 0, 1, 14, 1, 15, 0, 14, 4, 13, 6, 4, 13, 4, 14, 3, 0, 4, 11, 8, 6, 11, 6, 13, 5, 15, 1, 5, 7, 12, 15, 5, 12, 5, 1, 2, 7, 9, 10, 12, 7, 10]
+                        point3f[] points = [(4, -0.075, 0), (4, 0.075, 0), (2.45, 0.075, -2.220446e-16), (2.45, -0.075, -2.220446e-16), (2.45, -0.075, 2.1), (2.45, 0.075, 2.1), (1.55, -0.075, 2.1), (1.55, 0.075, 2.1), (1.55, -0.075, -2.220446e-16), (1.55, 0.075, -2.220446e-16), (0, 0.075, 0), (0, -0.075, 0), (0, 0.075, 3), (0, -0.075, 3), (4, -0.075, 3), (4, 0.075, 3)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def AecoSpace "WC" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "WC"
+                    string aeco:id = "9e2b5273-ec32-52b4-9539-30c5dba88017"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.wc"
+                    custom string aeco:props:DC_Space:SpaceType = "wc"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.wc"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 16
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 48
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -4, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Extent" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "extent"
+                        string aeco:derived:source = "9e2b5273-ec32-52b4-9539-30c5dba88017"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-2, -2, 0), (2, 2, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                        point3f[] points = [(-2, -2, 0), (-2, -2, 3), (2, -2, 3), (2, -2, 0), (2, 2, 3), (2, 2, 0), (-2, 2, 3), (-2, 2, 0)]
+                        color3f[] primvars:displayColor = [(0.65, 0.75, 0.8)]
+                        uniform token purpose = "guide"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (28, -10, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+
+                def Xform "door_office_1" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Door_Double_1800x2100>
+                )
+                {
+                    string aeco:class:ifc:code = "IfcDoor.DOOR"
+                    string aeco:class:ifc:name = "door.office.1"
+                    string aeco:id = "a1fa5d26-090b-510d-959c-da041182dd8c"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_DoorApproach:ApproachNormal = "+Y"
+                    custom string aeco:props:DC_DoorApproach:ApproachSpace = "sp.ocorr.1"
+                    custom double aeco:props:DC_DoorApproach:ThresholdHeight = 1.6
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "door.office.1"
+                    custom bool aeco:props:Pset_DoorCommon:IsExternal = 0
+                    custom string aeco:props:Pset_DoorCommon:Status = "NEW"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (16.1, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "a1fa5d26-090b-510d-959c-da041182dd8c"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-0.025, -0.015, 0), (1.825, 0.1, 2.125)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 9, 8, 6, 9, 8, 9, 11, 10, 8, 11, 10, 11, 13, 12, 10, 13, 12, 13, 15, 14, 12, 15, 14, 15, 0, 1, 14, 0, 7, 5, 11, 9, 7, 11, 0, 15, 13, 0, 13, 3, 11, 5, 3, 13, 11, 3, 10, 4, 6, 10, 6, 8, 12, 14, 1, 2, 12, 1, 2, 4, 10, 2, 10, 12, 17, 16, 19, 18, 17, 19, 18, 19, 21, 20, 18, 21, 20, 21, 23, 22, 20, 23, 22, 23, 25, 24, 22, 25, 24, 25, 27, 26, 24, 27, 26, 27, 29, 28, 26, 29, 28, 29, 31, 30, 28, 31, 30, 31, 16, 17, 30, 16, 23, 21, 27, 25, 23, 27, 16, 31, 29, 29, 27, 19, 27, 21, 19, 16, 29, 19, 26, 20, 22, 26, 22, 24, 28, 30, 17, 18, 26, 28, 18, 20, 26, 18, 28, 17, 33, 32, 35, 34, 33, 35, 34, 35, 37, 36, 34, 37, 36, 37, 39, 38, 36, 39, 38, 39, 32, 33, 38, 32, 35, 32, 37, 32, 39, 37, 36, 33, 34, 36, 38, 33, 41, 40, 43, 42, 41, 43, 42, 43, 45, 44, 42, 45, 44, 45, 47, 46, 44, 47, 46, 47, 49, 48, 46, 49, 48, 49, 51, 50, 48, 51, 50, 51, 53, 52, 50, 53, 52, 53, 55, 54, 52, 55, 54, 55, 40, 41, 54, 40, 49, 47, 51, 51, 47, 45, 40, 55, 53, 53, 51, 43, 40, 53, 43, 51, 45, 43, 50, 46, 48, 44, 46, 50, 52, 54, 41, 42, 50, 52, 42, 52, 41, 42, 44, 50, 57, 56, 59, 58, 57, 59, 58, 59, 61, 60, 58, 61, 60, 61, 63, 62, 60, 63, 62, 63, 65, 64, 62, 65, 64, 65, 67, 66, 64, 67, 66, 67, 69, 68, 66, 69, 68, 69, 71, 70, 68, 71, 70, 71, 56, 57, 70, 56, 63, 61, 67, 65, 63, 67, 56, 71, 69, 56, 69, 59, 67, 61, 59, 69, 67, 59, 66, 60, 62, 66, 62, 64, 68, 70, 57, 58, 68, 57, 58, 60, 66, 58, 66, 68, 73, 72, 75, 74, 73, 75, 74, 75, 77, 76, 74, 77, 76, 77, 79, 78, 76, 79, 78, 79, 72, 73, 78, 72, 75, 72, 77, 72, 79, 77, 76, 73, 74, 76, 78, 73, 83, 80, 81, 83, 81, 82, 85, 83, 82, 85, 82, 84, 87, 85, 84, 87, 84, 86, 89, 87, 86, 89, 86, 88, 91, 89, 88, 91, 88, 90, 80, 91, 90, 80, 90, 81, 89, 80, 83, 91, 80, 89, 85, 89, 83, 87, 89, 85, 82, 81, 88, 88, 81, 90, 82, 88, 84, 84, 88, 86, 93, 92, 95, 94, 93, 95, 94, 95, 97, 96, 94, 97, 96, 97, 99, 98, 96, 99, 98, 99, 101, 100, 98, 101, 100, 101, 103, 102, 100, 103, 102, 103, 92, 93, 102, 92, 99, 97, 101, 92, 103, 101, 92, 101, 95, 101, 97, 95, 100, 96, 98, 100, 102, 93, 94, 100, 93, 94, 96, 100, 107, 104, 105, 107, 105, 106, 109, 107, 106, 109, 106, 108, 111, 109, 108, 111, 108, 110, 104, 111, 110, 104, 110, 105, 109, 104, 107, 109, 111, 104, 106, 105, 108, 105, 110, 108, 113, 112, 115, 114, 113, 115, 114, 115, 117, 116, 114, 117, 116, 117, 119, 118, 116, 119, 118, 119, 121, 120, 118, 121, 120, 121, 123, 122, 120, 123, 122, 123, 112, 113, 122, 112, 115, 112, 121, 121, 112, 123, 115, 121, 117, 117, 121, 119, 120, 113, 114, 122, 113, 120, 116, 120, 114, 118, 120, 116, 127, 124, 125, 127, 125, 126, 129, 127, 126, 129, 126, 128, 131, 129, 128, 131, 128, 130, 133, 131, 130, 133, 130, 132, 135, 133, 132, 135, 132, 134, 124, 135, 134, 124, 134, 125, 133, 129, 131, 133, 135, 124, 127, 133, 124, 127, 129, 133, 130, 128, 132, 125, 134, 132, 125, 132, 126, 132, 128, 126]
+                        point3f[] points = [(0, 0.025, 0), (0, 0.05, 0), (0, 0.05, 2.1), (0, 0.025, 2.1), (1.8, 0.05, 2.1), (1.8, 0.025, 2.1), (1.8, 0.05, 0), (1.8, 0.025, 0), (1.775, 0.05, 0), (1.775, 0.025, 0), (1.775, 0.05, 2.075), (1.775, 0.025, 2.075), (0.025, 0.05, 2.075), (0.025, 0.025, 2.075), (0.025, 0.05, 0), (0.025, 0.025, 0), (0, 0, 0), (0, 0.025, 0), (0, 0.025, 2.1), (0, 0, 2.1), (1.8, 0.025, 2.1), (1.8, 0, 2.1), (1.8, 0.025, 0), (1.8, 0, 0), (1.75, 0.025, 0), (1.75, 0, 0), (1.75, 0.025, 2.05), (1.75, 0, 2.05), (0.05, 0.025, 2.05), (0.05, 0, 2.05), (0.05, 0.025, 0), (0.05, 0, 0), (0.05, 0, 0), (0.05, 0, 0.025), (1.75, 0, 0.025), (1.75, 0, 0), (1.75, 0.1, 0.025), (1.75, 0.1, 0), (0.05, 0.1, 0.025), (0.05, 0.1, 0), (-0.025, -0.005, 0), (-0.025, 0, 0), (-0.025, 0, 2.125), (-0.025, -0.005, 2.125), (1.825, 0, 2.125), (1.825, -0.005, 2.125), (1.825, 0, 0), (1.825, -0.005, 0), (1.75, 0, 0), (1.75, -0.005, 0), (1.75, 0, 2.05), (1.75, -0.005, 2.05), (0.05, 0, 2.05), (0.05, -0.005, 2.05), (0.05, 0, 0), (0.05, -0.005, 0), (-0.025, 0.05, 0), (-0.025, 0.055, 0), (-0.025, 0.055, 2.125), (-0.025, 0.05, 2.125), (1.825, 0.055, 2.125), (1.825, 0.05, 2.125), (1.825, 0.055, 0), (1.825, 0.05, 0), (1.775, 0.055, 0), (1.775, 0.05, 0), (1.775, 0.055, 2.075), (1.775, 0.05, 2.075), (0.025, 0.055, 2.075), (0.025, 0.05, 2.075), (0.025, 0.055, 0), (0.025, 0.05, 0), (0.025, 0.025, 0.025), (0.025, 0.025, 2.075), (0.899, 0.025, 2.075), (0.899, 0.025, 0.025), (0.899, 0.06, 2.075), (0.899, 0.06, 0.025), (0.025, 0.06, 2.075), (0.025, 0.06, 0.025), (0.849, 0.025, 1.015), (0.849, 0.025, 1.035), (0.849, -0.015, 1.035), (0.849, -0.015, 1.015), (0.729, -0.015, 1.035), (0.729, -0.015, 1.015), (0.729, 0.005, 1.035), (0.729, 0.005, 1.015), (0.829, 0.005, 1.035), (0.829, 0.005, 1.015), (0.829, 0.025, 1.035), (0.829, 0.025, 1.015), (0.849, 0.06, 1.015), (0.849, 0.06, 1.035), (0.849, 0.1, 1.035), (0.849, 0.1, 1.015), (0.729, 0.1, 1.035), (0.729, 0.1, 1.015), (0.729, 0.08, 1.035), (0.729, 0.08, 1.015), (0.829, 0.08, 1.035), (0.829, 0.08, 1.015), (0.829, 0.06, 1.035), (0.829, 0.06, 1.015), (1.775, 0.025, 0.025), (1.775, 0.025, 2.075), (0.901, 0.025, 2.075), (0.901, 0.025, 0.025), (0.901, 0.06, 2.075), (0.901, 0.06, 0.025), (1.775, 0.06, 2.075), (1.775, 0.06, 0.025), (0.951, 0.025, 1.015), (0.951, 0.025, 1.035), (0.951, -0.015, 1.035), (0.951, -0.015, 1.015), (1.071, -0.015, 1.035), (1.071, -0.015, 1.015), (1.071, 0.005, 1.035), (1.071, 0.005, 1.015), (0.971, 0.005, 1.035), (0.971, 0.005, 1.015), (0.971, 0.025, 1.035), (0.971, 0.025, 1.015), (0.951, 0.06, 1.015), (0.951, 0.06, 1.035), (0.951, 0.1, 1.035), (0.951, 0.1, 1.015), (1.071, 0.1, 1.035), (1.071, 0.1, 1.015), (1.071, 0.08, 1.035), (1.071, 0.08, 1.015), (0.971, 0.08, 1.035), (0.971, 0.08, 1.015), (0.971, 0.06, 1.035), (0.971, 0.06, 1.015)]
+                        color3f[] primvars:displayColor = [(0.45, 0.47, 0.5)]
+                    }
+                }
+
+                def Xform "wall_l1_h_003" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (4, 0, 0)
+                    double aeco:axis:length = 4
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.h.003"
+                    string aeco:id = "aeedc717-acaa-5458-8d1e-acd1bcfa095d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.003"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 12
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 3.5999999999999996
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 4
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (26, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "aeedc717-acaa-5458-8d1e-acd1bcfa095d"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (4, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (4, 0.15, 3), (4, 0.15, 0), (4, -0.15, 3), (4, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_v_018" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (5, 0, 0)
+                    double aeco:axis:length = 5
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.v.018"
+                    string aeco:id = "b8ad6534-0347-5bac-9654-5ba0bb28183a"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.018"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 15
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 4.5
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 5
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (30, -8, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "b8ad6534-0347-5bac-9654-5ba0bb28183a"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (5, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (5, 0.15, 3), (5, 0.15, 0), (5, -0.15, 3), (5, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_v_015" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (4, 0, 0)
+                    double aeco:axis:length = 4
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.v.015"
+                    string aeco:id = "c46e4871-96dd-54c4-af2b-1a161d7f1f55"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.015"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 12
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 1.7999999999999998
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 4
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (26, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "c46e4871-96dd-54c4-af2b-1a161d7f1f55"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, 0), (4, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.075, 0), (0, -0.075, 3), (0, 0.075, 3), (0, 0.075, 0), (4, 0.075, 3), (4, 0.075, 0), (4, -0.075, 3), (4, -0.075, 0)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def Xform "wall_l1_h_009" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (3, 0, 0)
+                    double aeco:axis:length = 3
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.h.009"
+                    string aeco:id = "cc8f6368-1f30-53e5-a842-8fd3461d0ac6"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.009"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 2.6999999999999997
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, 0, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "cc8f6368-1f30-53e5-a842-8fd3461d0ac6"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (3, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (3, 0.15, 3), (3, 0.15, 0), (3, -0.15, 3), (3, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_v_016" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (5, 0, 0)
+                    double aeco:axis:length = 5
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.v.016"
+                    string aeco:id = "d008ead2-8996-54f8-9ced-7345cc4a0a8d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.016"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 15
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 2.25
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 5
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (26, -8, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "d008ead2-8996-54f8-9ced-7345cc4a0a8d"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, 0), (5, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.075, 0), (0, -0.075, 3), (0, 0.075, 3), (0, 0.075, 0), (5, 0.075, 3), (5, 0.075, 0), (5, -0.075, 3), (5, -0.075, 0)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def Xform "door_wc" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Door_Single_900x2100>
+                )
+                {
+                    string aeco:class:ifc:code = "IfcDoor.DOOR"
+                    string aeco:class:ifc:name = "door.wc"
+                    string aeco:id = "d955b4e4-b067-5b71-a32a-02acae314fe7"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_DoorApproach:ApproachNormal = "+Y"
+                    custom string aeco:props:DC_DoorApproach:ApproachSpace = "sp.kitchen"
+                    custom double aeco:props:DC_DoorApproach:ThresholdHeight = 1.6
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "door.wc"
+                    custom bool aeco:props:Pset_DoorCommon:IsExternal = 0
+                    custom string aeco:props:Pset_DoorCommon:Status = "NEW"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (27.55, -8, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "d955b4e4-b067-5b71-a32a-02acae314fe7"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-0.025, -0.015, 0), (0.925, 0.1, 2.125)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 9, 8, 6, 9, 8, 9, 11, 10, 8, 11, 10, 11, 13, 12, 10, 13, 12, 13, 15, 14, 12, 15, 14, 15, 0, 1, 14, 0, 7, 5, 11, 9, 7, 11, 0, 15, 13, 13, 11, 3, 11, 5, 3, 0, 13, 3, 10, 4, 6, 10, 6, 8, 12, 14, 1, 2, 10, 12, 2, 4, 10, 2, 12, 1, 17, 16, 19, 18, 17, 19, 18, 19, 21, 20, 18, 21, 20, 21, 23, 22, 20, 23, 22, 23, 25, 24, 22, 25, 24, 25, 27, 26, 24, 27, 26, 27, 29, 28, 26, 29, 28, 29, 31, 30, 28, 31, 30, 31, 16, 17, 30, 16, 23, 21, 27, 25, 23, 27, 16, 31, 29, 29, 27, 19, 27, 21, 19, 16, 29, 19, 26, 20, 22, 26, 22, 24, 28, 30, 17, 18, 26, 28, 18, 20, 26, 18, 28, 17, 33, 32, 35, 34, 33, 35, 34, 35, 37, 36, 34, 37, 36, 37, 39, 38, 36, 39, 38, 39, 32, 33, 38, 32, 35, 32, 37, 32, 39, 37, 36, 33, 34, 36, 38, 33, 41, 40, 43, 42, 41, 43, 42, 43, 45, 44, 42, 45, 44, 45, 47, 46, 44, 47, 46, 47, 49, 48, 46, 49, 48, 49, 51, 50, 48, 51, 50, 51, 53, 52, 50, 53, 52, 53, 55, 54, 52, 55, 54, 55, 40, 41, 54, 40, 47, 45, 51, 49, 47, 51, 40, 55, 53, 53, 51, 43, 51, 45, 43, 40, 53, 43, 50, 44, 46, 50, 46, 48, 52, 54, 41, 42, 50, 52, 42, 44, 50, 42, 52, 41, 57, 56, 59, 58, 57, 59, 58, 59, 61, 60, 58, 61, 60, 61, 63, 62, 60, 63, 62, 63, 65, 64, 62, 65, 64, 65, 67, 66, 64, 67, 66, 67, 69, 68, 66, 69, 68, 69, 71, 70, 68, 71, 70, 71, 56, 57, 70, 56, 63, 61, 67, 65, 63, 67, 56, 71, 69, 69, 67, 59, 67, 61, 59, 56, 69, 59, 66, 60, 62, 66, 62, 64, 68, 70, 57, 58, 66, 68, 58, 60, 66, 58, 68, 57, 73, 72, 75, 74, 73, 75, 74, 75, 77, 76, 74, 77, 76, 77, 79, 78, 76, 79, 78, 79, 72, 73, 78, 72, 75, 72, 77, 72, 79, 77, 76, 73, 74, 76, 78, 73, 83, 80, 81, 83, 81, 82, 85, 83, 82, 85, 82, 84, 87, 85, 84, 87, 84, 86, 89, 87, 86, 89, 86, 88, 91, 89, 88, 91, 88, 90, 80, 91, 90, 80, 90, 81, 89, 80, 83, 91, 80, 89, 85, 89, 83, 87, 89, 85, 82, 81, 88, 88, 81, 90, 82, 88, 84, 84, 88, 86, 93, 92, 95, 94, 93, 95, 94, 95, 97, 96, 94, 97, 96, 97, 99, 98, 96, 99, 98, 99, 101, 100, 98, 101, 100, 101, 103, 102, 100, 103, 102, 103, 92, 93, 102, 92, 99, 97, 101, 92, 103, 101, 92, 101, 95, 101, 97, 95, 100, 96, 98, 100, 102, 93, 94, 100, 93, 94, 96, 100]
+                        point3f[] points = [(0, 0.025, 0), (0, 0.05, 0), (0, 0.05, 2.1), (0, 0.025, 2.1), (0.9, 0.05, 2.1), (0.9, 0.025, 2.1), (0.9, 0.05, 0), (0.9, 0.025, 0), (0.875, 0.05, 0), (0.875, 0.025, 0), (0.875, 0.05, 2.075), (0.875, 0.025, 2.075), (0.025, 0.05, 2.075), (0.025, 0.025, 2.075), (0.025, 0.05, 0), (0.025, 0.025, 0), (0, 0, 0), (0, 0.025, 0), (0, 0.025, 2.1), (0, 0, 2.1), (0.9, 0.025, 2.1), (0.9, 0, 2.1), (0.9, 0.025, 0), (0.9, 0, 0), (0.85, 0.025, 0), (0.85, 0, 0), (0.85, 0.025, 2.05), (0.85, 0, 2.05), (0.05, 0.025, 2.05), (0.05, 0, 2.05), (0.05, 0.025, 0), (0.05, 0, 0), (0.05, 0, 0), (0.05, 0, 0.025), (0.85, 0, 0.025), (0.85, 0, 0), (0.85, 0.1, 0.025), (0.85, 0.1, 0), (0.05, 0.1, 0.025), (0.05, 0.1, 0), (-0.025, -0.005, 0), (-0.025, 0, 0), (-0.025, 0, 2.125), (-0.025, -0.005, 2.125), (0.925, 0, 2.125), (0.925, -0.005, 2.125), (0.925, 0, 0), (0.925, -0.005, 0), (0.85, 0, 0), (0.85, -0.005, 0), (0.85, 0, 2.05), (0.85, -0.005, 2.05), (0.05, 0, 2.05), (0.05, -0.005, 2.05), (0.05, 0, 0), (0.05, -0.005, 0), (-0.025, 0.05, 0), (-0.025, 0.055, 0), (-0.025, 0.055, 2.125), (-0.025, 0.05, 2.125), (0.925, 0.055, 2.125), (0.925, 0.05, 2.125), (0.925, 0.055, 0), (0.925, 0.05, 0), (0.875, 0.055, 0), (0.875, 0.05, 0), (0.875, 0.055, 2.075), (0.875, 0.05, 2.075), (0.025, 0.055, 2.075), (0.025, 0.05, 2.075), (0.025, 0.055, 0), (0.025, 0.05, 0), (0.025, 0.025, 0.025), (0.025, 0.025, 2.075), (0.875, 0.025, 2.075), (0.875, 0.025, 0.025), (0.875, 0.06, 2.075), (0.875, 0.06, 0.025), (0.025, 0.06, 2.075), (0.025, 0.06, 0.025), (0.825, 0.025, 1.015), (0.825, 0.025, 1.035), (0.825, -0.015, 1.035), (0.825, -0.015, 1.015), (0.705, -0.015, 1.035), (0.705, -0.015, 1.015), (0.705, 0.005, 1.035), (0.705, 0.005, 1.015), (0.805, 0.005, 1.035), (0.805, 0.005, 1.015), (0.805, 0.025, 1.035), (0.805, 0.025, 1.015), (0.825, 0.06, 1.015), (0.825, 0.06, 1.035), (0.825, 0.1, 1.035), (0.825, 0.1, 1.015), (0.705, 0.1, 1.035), (0.705, 0.1, 1.015), (0.705, 0.08, 1.035), (0.705, 0.08, 1.015), (0.805, 0.08, 1.035), (0.805, 0.08, 1.015), (0.805, 0.06, 1.035), (0.805, 0.06, 1.015)]
+                        color3f[] primvars:displayColor = [(0.45, 0.47, 0.5)]
+                    }
+                }
+
+                def Xform "wall_l1_v_011" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/External_Wall_300>
+                )
+                {
+                    double3 aeco:axis:end = (9, 0, 0)
+                    double aeco:axis:length = 9
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.SOLIDWALL"
+                    string aeco:class:ifc:name = "wall.l1.v.011"
+                    string aeco:id = "dd5cf3a2-629b-502e-bc90-de3eee629131"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.v.011"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 120"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 1
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 1
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 27
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 8.1
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.3
+                    matrix4d xformOp:transform = ( (0, 1, 0, 0), (-1, 0, 0, 0), (0, 0, 1, 0), (12, -12, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "dd5cf3a2-629b-502e-bc90-de3eee629131"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.15, 0), (9, 0.15, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.15, 0), (0, -0.15, 3), (0, 0.15, 3), (0, 0.15, 0), (9, 0.15, 3), (9, 0.15, 0), (9, -0.15, 3), (9, -0.15, 0)]
+                        color3f[] primvars:displayColor = [(0.72, 0.72, 0.7)]
+                    }
+                }
+
+                def Xform "wall_l1_h_005" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc", "AecoAxisAPI"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Internal_Wall_150>
+                )
+                {
+                    double3 aeco:axis:end = (3, 0, 0)
+                    double aeco:axis:length = 3
+                    double3 aeco:axis:start = (0, 0, 0)
+                    string aeco:class:ifc:code = "IfcWall.PARTITIONING"
+                    string aeco:class:ifc:name = "wall.l1.h.005"
+                    string aeco:id = "e045c7cd-b953-5b4a-936b-b64d2bda214d"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "wall.l1.h.005"
+                    custom string aeco:props:Pset_WallCommon:FireRating = "REI 30"
+                    custom bool aeco:props:Pset_WallCommon:IsExternal = 0
+                    custom bool aeco:props:Pset_WallCommon:LoadBearing = 0
+                    custom string aeco:props:Pset_WallCommon:Status = "NEW"
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossSideArea = 9
+                    custom double aeco:props:Qto_WallBaseQuantities:GrossVolume = 1.3499999999999999
+                    custom double aeco:props:Qto_WallBaseQuantities:Height = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Length = 3
+                    custom double aeco:props:Qto_WallBaseQuantities:Width = 0.15
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (12, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "e045c7cd-b953-5b4a-936b-b64d2bda214d"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0, -0.075, 0), (3, 0.075, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [3, 0, 1, 3, 1, 2, 5, 3, 2, 5, 2, 4, 7, 5, 4, 7, 4, 6, 0, 7, 6, 0, 6, 1, 3, 5, 7, 3, 7, 0, 6, 4, 2, 1, 6, 2]
+                        point3f[] points = [(0, -0.075, 0), (0, -0.075, 3), (0, 0.075, 3), (0, 0.075, 0), (3, 0.075, 3), (3, 0.075, 0), (3, -0.075, 3), (3, -0.075, 0)]
+                        color3f[] primvars:displayColor = [(0.86, 0.86, 0.84)]
+                    }
+                }
+
+                def Xform "door_meeting_1" (
+                    prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"]
+                    prepend inherits = </demo_datacentre_01/_TypeCatalog/Door_Single_900x2100>
+                )
+                {
+                    string aeco:class:ifc:code = "IfcDoor.DOOR"
+                    string aeco:class:ifc:name = "door.meeting.1"
+                    string aeco:id = "e58cf07c-9dfc-59dd-b09f-07f776552645"
+                    uniform token aeco:phase = "proposed"
+                    custom string aeco:props:DC_DoorApproach:ApproachNormal = "+Y"
+                    custom string aeco:props:DC_DoorApproach:ApproachSpace = "sp.ocorr.1"
+                    custom double aeco:props:DC_DoorApproach:ThresholdHeight = 1.6
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "door.meeting.1"
+                    custom bool aeco:props:Pset_DoorCommon:IsExternal = 0
+                    custom string aeco:props:Pset_DoorCommon:Status = "NEW"
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (23.55, -3, 0, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Geom" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "body"
+                        string aeco:derived:source = "e58cf07c-9dfc-59dd-b09f-07f776552645"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-0.025, -0.015, 0), (0.925, 0.1, 2.125)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 9, 8, 6, 9, 8, 9, 11, 10, 8, 11, 10, 11, 13, 12, 10, 13, 12, 13, 15, 14, 12, 15, 14, 15, 0, 1, 14, 0, 7, 5, 11, 9, 7, 11, 0, 15, 13, 13, 11, 3, 11, 5, 3, 0, 13, 3, 10, 4, 6, 10, 6, 8, 12, 14, 1, 2, 10, 12, 2, 4, 10, 2, 12, 1, 17, 16, 19, 18, 17, 19, 18, 19, 21, 20, 18, 21, 20, 21, 23, 22, 20, 23, 22, 23, 25, 24, 22, 25, 24, 25, 27, 26, 24, 27, 26, 27, 29, 28, 26, 29, 28, 29, 31, 30, 28, 31, 30, 31, 16, 17, 30, 16, 23, 21, 27, 25, 23, 27, 16, 31, 29, 29, 27, 19, 27, 21, 19, 16, 29, 19, 26, 20, 22, 26, 22, 24, 28, 30, 17, 18, 26, 28, 18, 20, 26, 18, 28, 17, 33, 32, 35, 34, 33, 35, 34, 35, 37, 36, 34, 37, 36, 37, 39, 38, 36, 39, 38, 39, 32, 33, 38, 32, 35, 32, 37, 32, 39, 37, 36, 33, 34, 36, 38, 33, 41, 40, 43, 42, 41, 43, 42, 43, 45, 44, 42, 45, 44, 45, 47, 46, 44, 47, 46, 47, 49, 48, 46, 49, 48, 49, 51, 50, 48, 51, 50, 51, 53, 52, 50, 53, 52, 53, 55, 54, 52, 55, 54, 55, 40, 41, 54, 40, 47, 45, 51, 49, 47, 51, 40, 55, 53, 53, 51, 43, 51, 45, 43, 40, 53, 43, 50, 44, 46, 50, 46, 48, 52, 54, 41, 42, 50, 52, 42, 44, 50, 42, 52, 41, 57, 56, 59, 58, 57, 59, 58, 59, 61, 60, 58, 61, 60, 61, 63, 62, 60, 63, 62, 63, 65, 64, 62, 65, 64, 65, 67, 66, 64, 67, 66, 67, 69, 68, 66, 69, 68, 69, 71, 70, 68, 71, 70, 71, 56, 57, 70, 56, 63, 61, 67, 65, 63, 67, 56, 71, 69, 69, 67, 59, 67, 61, 59, 56, 69, 59, 66, 60, 62, 66, 62, 64, 68, 70, 57, 58, 66, 68, 58, 60, 66, 58, 68, 57, 73, 72, 75, 74, 73, 75, 74, 75, 77, 76, 74, 77, 76, 77, 79, 78, 76, 79, 78, 79, 72, 73, 78, 72, 75, 72, 77, 72, 79, 77, 76, 73, 74, 76, 78, 73, 83, 80, 81, 83, 81, 82, 85, 83, 82, 85, 82, 84, 87, 85, 84, 87, 84, 86, 89, 87, 86, 89, 86, 88, 91, 89, 88, 91, 88, 90, 80, 91, 90, 80, 90, 81, 89, 80, 83, 91, 80, 89, 85, 89, 83, 87, 89, 85, 82, 81, 88, 88, 81, 90, 82, 88, 84, 84, 88, 86, 93, 92, 95, 94, 93, 95, 94, 95, 97, 96, 94, 97, 96, 97, 99, 98, 96, 99, 98, 99, 101, 100, 98, 101, 100, 101, 103, 102, 100, 103, 102, 103, 92, 93, 102, 92, 99, 97, 101, 92, 103, 101, 92, 101, 95, 101, 97, 95, 100, 96, 98, 100, 102, 93, 94, 100, 93, 94, 96, 100]
+                        point3f[] points = [(0, 0.025, 0), (0, 0.05, 0), (0, 0.05, 2.1), (0, 0.025, 2.1), (0.9, 0.05, 2.1), (0.9, 0.025, 2.1), (0.9, 0.05, 0), (0.9, 0.025, 0), (0.875, 0.05, 0), (0.875, 0.025, 0), (0.875, 0.05, 2.075), (0.875, 0.025, 2.075), (0.025, 0.05, 2.075), (0.025, 0.025, 2.075), (0.025, 0.05, 0), (0.025, 0.025, 0), (0, 0, 0), (0, 0.025, 0), (0, 0.025, 2.1), (0, 0, 2.1), (0.9, 0.025, 2.1), (0.9, 0, 2.1), (0.9, 0.025, 0), (0.9, 0, 0), (0.85, 0.025, 0), (0.85, 0, 0), (0.85, 0.025, 2.05), (0.85, 0, 2.05), (0.05, 0.025, 2.05), (0.05, 0, 2.05), (0.05, 0.025, 0), (0.05, 0, 0), (0.05, 0, 0), (0.05, 0, 0.025), (0.85, 0, 0.025), (0.85, 0, 0), (0.85, 0.1, 0.025), (0.85, 0.1, 0), (0.05, 0.1, 0.025), (0.05, 0.1, 0), (-0.025, -0.005, 0), (-0.025, 0, 0), (-0.025, 0, 2.125), (-0.025, -0.005, 2.125), (0.925, 0, 2.125), (0.925, -0.005, 2.125), (0.925, 0, 0), (0.925, -0.005, 0), (0.85, 0, 0), (0.85, -0.005, 0), (0.85, 0, 2.05), (0.85, -0.005, 2.05), (0.05, 0, 2.05), (0.05, -0.005, 2.05), (0.05, 0, 0), (0.05, -0.005, 0), (-0.025, 0.05, 0), (-0.025, 0.055, 0), (-0.025, 0.055, 2.125), (-0.025, 0.05, 2.125), (0.925, 0.055, 2.125), (0.925, 0.05, 2.125), (0.925, 0.055, 0), (0.925, 0.05, 0), (0.875, 0.055, 0), (0.875, 0.05, 0), (0.875, 0.055, 2.075), (0.875, 0.05, 2.075), (0.025, 0.055, 2.075), (0.025, 0.05, 2.075), (0.025, 0.055, 0), (0.025, 0.05, 0), (0.025, 0.025, 0.025), (0.025, 0.025, 2.075), (0.875, 0.025, 2.075), (0.875, 0.025, 0.025), (0.875, 0.06, 2.075), (0.875, 0.06, 0.025), (0.025, 0.06, 2.075), (0.025, 0.06, 0.025), (0.825, 0.025, 1.015), (0.825, 0.025, 1.035), (0.825, -0.015, 1.035), (0.825, -0.015, 1.015), (0.705, -0.015, 1.035), (0.705, -0.015, 1.015), (0.705, 0.005, 1.035), (0.705, 0.005, 1.015), (0.805, 0.005, 1.035), (0.805, 0.005, 1.015), (0.805, 0.025, 1.035), (0.805, 0.025, 1.015), (0.825, 0.06, 1.015), (0.825, 0.06, 1.035), (0.825, 0.1, 1.035), (0.825, 0.1, 1.015), (0.705, 0.1, 1.035), (0.705, 0.1, 1.015), (0.705, 0.08, 1.035), (0.705, 0.08, 1.015), (0.805, 0.08, 1.035), (0.805, 0.08, 1.015), (0.805, 0.06, 1.035), (0.805, 0.06, 1.015)]
+                        color3f[] primvars:displayColor = [(0.45, 0.47, 0.5)]
+                    }
+                }
+
+                def AecoSpace "Meeting_Room_L01" (
+                    prepend apiSchemas = ["AecoClassificationAPI:ifc"]
+                )
+                {
+                    string aeco:class:ifc:code = "IfcSpace"
+                    string aeco:class:ifc:name = "Meeting Room L01"
+                    string aeco:id = "ec7507b6-b9b2-5391-99f7-4ddebb13178e"
+                    custom string aeco:props:DC_Identity:Discipline = "coordination"
+                    custom string aeco:props:DC_Identity:Id = "sp.meeting.1"
+                    custom string aeco:props:DC_Space:SpaceType = "meeting"
+                    custom bool aeco:props:Pset_SpaceCommon:IsExternal = 0
+                    custom string aeco:props:Pset_SpaceCommon:Reference = "sp.meeting.1"
+                    custom string aeco:props:Pset_SpaceCommon:Status = "NEW"
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossFloorArea = 36
+                    custom double aeco:props:Qto_SpaceBaseQuantities:GrossVolume = 108
+                    custom double aeco:props:Qto_SpaceBaseQuantities:Height = 3
+                    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -4, 1) )
+                    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                    def Mesh "Extent" (
+                        prepend apiSchemas = ["AecoDerivedGeometryAPI"]
+                    )
+                    {
+                        uniform token aeco:derived:approx = "tessellated"
+                        uniform token aeco:derived:role = "extent"
+                        string aeco:derived:source = "ec7507b6-b9b2-5391-99f7-4ddebb13178e"
+                        string aeco:derived:stamp = "ifc2usdaeco (ifcopenshell 0.8.5)"
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-2, -4.5, 0), (2, 4.5, 3)]
+                        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                        int[] faceVertexIndices = [1, 0, 3, 2, 1, 3, 2, 3, 5, 4, 2, 5, 4, 5, 7, 6, 4, 7, 6, 7, 0, 1, 6, 0, 3, 0, 5, 0, 7, 5, 4, 1, 2, 4, 6, 1]
+                        point3f[] points = [(-2, -4.5, 0), (-2, -4.5, 3), (2, -4.5, 3), (2, -4.5, 0), (2, 4.5, 3), (2, 4.5, 0), (-2, 4.5, 3), (-2, 4.5, 0)]
+                        color3f[] primvars:displayColor = [(0.65, 0.75, 0.8)]
+                        uniform token purpose = "guide"
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (24, -7.5, 4, 1) )
+                        uniform token[] xformOpOrder = ["xformOp:transform"]
+                    }
+                }
+            }
+        }
+    }
+
+    class "_TypeCatalog"
+    {
+        class "bullet_4mp_outdoor" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+            custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+            custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalRange": [3.7, 7.5], "aeco:cctvSensor:hfovRange": [100.0, 52.0], "aeco:cctvSensor:motorised": false, "aeco:cctvSensor:offset": [0, 0, 0], "aeco:cctvSensor:panRange": [0, 0], "aeco:cctvSensor:pixels": [2688, 1512], "aeco:cctvSensor:projection": "rectilinear", "aeco:cctvSensor:sensorSize": [0.0, 0.0], "aeco:cctvSensor:spectrum": "visible", "aeco:cctvSensor:tiltRange": [0, 0], "aeco:cctvSensor:vfovRange": [55.0, 30.0]}, "name": "Sensor_0"}]'
+            custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 40.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "bullet_4mp_outdoor"}'
+            string aeco:type:model = "bullet_4mp_outdoor"
+        }
+
+        class "CHW_Pipe_DN65" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.RIGIDSEGMENT"
+            string aeco:type:model = "CHW Pipe DN65"
+        }
+
+        class "RC_Column_400x400" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcColumnType.COLUMN"
+            string aeco:type:model = "RC Column 400x400"
+        }
+
+        class "Server_Rack_600x1200" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcFurnitureType.TECHNICALCABINET"
+            string aeco:type:model = "Server Rack 600x1200"
+        }
+
+        class "Ring_Main_Unit_11kV" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricDistributionBoardType.SWITCHBOARD"
+            string aeco:type:model = "Ring Main Unit 11kV"
+        }
+
+        class "Main_LV_Switchboard" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricDistributionBoardType.SWITCHBOARD"
+            string aeco:type:model = "Main LV Switchboard"
+        }
+
+        class "Dosing_Skid" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcUnitaryEquipmentType.DosingSkid"
+            string aeco:type:model = "Dosing Skid"
+        }
+
+        class "dome_5mp" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+            custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+            custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalRange": [3.0, 8.5], "aeco:cctvSensor:hfovRange": [104.0, 34.0], "aeco:cctvSensor:motorised": false, "aeco:cctvSensor:offset": [0.0, 0.0, -0.08], "aeco:cctvSensor:panRange": [0, 0], "aeco:cctvSensor:pixels": [2592, 1944], "aeco:cctvSensor:projection": "rectilinear", "aeco:cctvSensor:sensorSize": [0.0, 0.0], "aeco:cctvSensor:spectrum": "visible", "aeco:cctvSensor:tiltRange": [0, 0], "aeco:cctvSensor:vfovRange": [76.0, 26.0]}, "name": "Sensor_0"}]'
+            custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 30.0, "aeco:cctvType:outdoor": false, "aeco:type:manufacturer": "Generic", "aeco:type:model": "dome_5mp"}'
+            string aeco:type:model = "dome_5mp"
+        }
+
+        class "TCS_Pipe_Junction" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeFittingType.JUNCTION"
+            string aeco:type:model = "TCS Pipe Junction"
+        }
+
+        class "Buffer_Tank" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcTankType.STORAGE"
+            string aeco:type:model = "Buffer Tank"
+        }
+
+        class "Utility_Intake" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcBuildingElementProxyType.UtilityIntake"
+            string aeco:type:model = "Utility Intake"
+        }
+
+        class "DC_Battery_Cable" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableSegmentType.CABLESEGMENT"
+            string aeco:type:model = "DC Battery Cable"
+        }
+
+        class "Power_Distribution_Unit" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricDistributionBoardType.DISTRIBUTIONBOARD"
+            string aeco:type:model = "Power Distribution Unit"
+        }
+
+        class "Cable_Tray_Bend_450x100" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableCarrierFittingType.BEND"
+            string aeco:type:model = "Cable Tray Bend 450x100"
+        }
+
+        class "Motor_Control_Centre" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricDistributionBoardType.MOTORCONTROLCENTRE"
+            string aeco:type:model = "Motor Control Centre"
+        }
+
+        class "Fuel_Line_Bend_DN80" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeFittingType.BEND"
+            string aeco:type:model = "Fuel Line Bend DN80"
+        }
+
+        class "FWS_Pipe_Junction" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeFittingType.JUNCTION"
+            string aeco:type:model = "FWS Pipe Junction"
+        }
+
+        class "Cable_Tray_Tee_450x100" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableCarrierFittingType.TEE"
+            string aeco:type:model = "Cable Tray Tee 450x100"
+        }
+
+        class "RC_Ring_Beam_400x600" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcBeamType.BEAM"
+            string aeco:type:model = "RC Ring Beam 400x600"
+        }
+
+        class "Cable_Tray_450x100_GI" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableCarrierSegmentType.CABLETRAYSEGMENT"
+            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Reference = "CT-450x100"
+            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Status = "NEW"
+            string aeco:type:model = "Cable Tray 450x100 GI"
+        }
+
+        class "Rack_Power_Cord" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableSegmentType.CABLESEGMENT"
+            string aeco:type:model = "Rack Power Cord"
+        }
+
+        class "Diesel_Fuel_Tank" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcTankType.STORAGE"
+            string aeco:type:model = "Diesel Fuel Tank"
+        }
+
+        class "Fuel_Line_DN80" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.RIGIDSEGMENT"
+            string aeco:type:model = "Fuel Line DN80"
+        }
+
+        class "AHU" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcUnitaryEquipmentType.AIRHANDLER"
+            string aeco:type:model = "AHU"
+        }
+
+        class "FWS_Pipe_DN100" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.RIGIDSEGMENT"
+            string aeco:type:model = "FWS Pipe DN100"
+        }
+
+        class "ptz_4k" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAudioVisualApplianceType.CAMERA"
+            custom string aeco:props:Pset_AecoCctv:Contract = "usdaeco-cctv-ifc/1.0"
+            custom string aeco:props:Pset_AecoCctv:Sensors = '[{"drivers": {"aeco:cctvSensor:focalRange": [6.64, 225.5], "aeco:cctvSensor:hfovRange": [60.8, 2.0], "aeco:cctvSensor:motorised": true, "aeco:cctvSensor:offset": [0, 0, 0], "aeco:cctvSensor:panRange": [-180.0, 180.0], "aeco:cctvSensor:pixels": [3840, 2160], "aeco:cctvSensor:projection": "rectilinear", "aeco:cctvSensor:sensorSize": [0.0, 0.0], "aeco:cctvSensor:spectrum": "visible", "aeco:cctvSensor:tiltRange": [0.0, 90.0], "aeco:cctvSensor:vfovRange": [36.5, 1.1]}, "name": "Sensor_0"}]'
+            custom string aeco:props:Pset_AecoCctv:Type = '{"aeco:cctvType:irRange": 0.0, "aeco:cctvType:outdoor": true, "aeco:type:manufacturer": "Generic", "aeco:type:model": "ptz_4k"}'
+            string aeco:type:model = "ptz_4k"
+        }
+
+        class "Fire_Wall_200" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcWallType.SOLIDWALL"
+            string aeco:type:model = "Fire Wall 200"
+        }
+
+        class "UPS_Module" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricFlowStorageDeviceType.UPS"
+            string aeco:type:model = "UPS Module"
+        }
+
+        class "TCS_Pipe_Bend" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeFittingType.BEND"
+            string aeco:type:model = "TCS Pipe Bend"
+        }
+
+        class "Door_Single_900x2100" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcDoorType.DOOR"
+            string aeco:type:model = "Door Single 900x2100"
+        }
+
+        class "Cable_Junction" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableFittingType.JUNCTION"
+            string aeco:type:model = "Cable Junction"
+        }
+
+        class "Coolant_Distribution_Unit" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcUnitaryEquipmentType.CDU"
+            string aeco:type:model = "Coolant Distribution Unit"
+        }
+
+        class "TCS_Pipe_DN150" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.RIGIDSEGMENT"
+            string aeco:type:model = "TCS Pipe DN150"
+        }
+
+        class "AVA_Sounder_Beacon" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcAlarmType.AVA"
+            string aeco:type:model = "AVA Sounder Beacon"
+        }
+
+        class "CHW_Pipe_Bend" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeFittingType.BEND"
+            string aeco:type:model = "CHW Pipe Bend"
+        }
+
+        class "Door_Roller_3500x4000" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcDoorType.GATE"
+            string aeco:type:model = "Door Roller 3500x4000"
+        }
+
+        class "Dry_Cooler" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCoolingTowerType.DryCooler"
+            string aeco:type:model = "Dry Cooler"
+        }
+
+        class "HV_Power_Cable_11kV" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableSegmentType.CABLESEGMENT"
+            custom string aeco:props:DC_CableRating:Voltage = "11kV"
+            string aeco:type:model = "HV Power Cable 11kV"
+        }
+
+        class "UPS_Output_Board" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricDistributionBoardType.SWITCHBOARD"
+            string aeco:type:model = "UPS Output Board"
+        }
+
+        class "LV_Power_Cable" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableSegmentType.CABLESEGMENT"
+            string aeco:type:model = "LV Power Cable"
+        }
+
+        class "TCS_Pipe_DN100" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.RIGIDSEGMENT"
+            string aeco:type:model = "TCS Pipe DN100"
+        }
+
+        class "Busbar_Trunking" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableSegmentType.BUSBARSEGMENT"
+            string aeco:type:model = "Busbar Trunking"
+        }
+
+        class "Cable_Tray_Bend_600x100" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableCarrierFittingType.BEND"
+            string aeco:type:model = "Cable Tray Bend 600x100"
+        }
+
+        class "Iris_Scanner" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcSensorType.IDENTIFIERSENSOR"
+            string aeco:type:model = "Iris Scanner"
+        }
+
+        class "TCS_Rack_Hose_DN25" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.FLEXIBLESEGMENT"
+            string aeco:type:model = "TCS Rack Hose DN25"
+        }
+
+        class "Carrier_Rack_600x1200" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcFurnitureType.TECHNICALCABINET"
+            string aeco:type:model = "Carrier Rack 600x1200"
+        }
+
+        class "CHW_Pipe_DN150" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.RIGIDSEGMENT"
+            string aeco:type:model = "CHW Pipe DN150"
+        }
+
+        class "FWS_Pipe_Bend" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeFittingType.BEND"
+            string aeco:type:model = "FWS Pipe Bend"
+        }
+
+        class "Busway_Tap_Off_Junction" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableFittingType.JUNCTION"
+            string aeco:type:model = "Busway Tap-Off Junction"
+        }
+
+        class "Door_Double_1800x2100" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcDoorType.DOOR"
+            string aeco:type:model = "Door Double 1800x2100"
+        }
+
+        class "Cable_Tray_600x100_GI" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableCarrierSegmentType.CABLETRAYSEGMENT"
+            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Reference = "CT-600x100"
+            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Status = "NEW"
+            string aeco:type:model = "Cable Tray 600x100 GI"
+        }
+
+        class "Cast_Resin_Transformer_11kV_400V" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcTransformerType.CURRENT"
+            string aeco:type:model = "Cast Resin Transformer 11kV/400V"
+        }
+
+        class "House_Distribution_Board" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricDistributionBoardType.DISTRIBUTIONBOARD"
+            string aeco:type:model = "House Distribution Board"
+        }
+
+        class "Battery_String" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricFlowStorageDeviceType.BATTERY"
+            string aeco:type:model = "Battery String"
+        }
+
+        class "Air_Cooled_Chiller" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcChillerType.AIRCOOLED"
+            string aeco:type:model = "Air-Cooled Chiller"
+        }
+
+        class "Cable_Tray_Dropper_150x50" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcCableCarrierSegmentType.DROPPER"
+            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Reference = "CT-DROP-150x50"
+            custom string aeco:props:Pset_CableCarrierSegmentTypeCommon:Status = "NEW"
+            string aeco:type:model = "Cable Tray Dropper 150x50"
+        }
+
+        class "Plate_Heat_Exchanger" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcHeatExchangerType.PLATE"
+            string aeco:type:model = "Plate Heat Exchanger"
+        }
+
+        class "CRAH" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcUnitaryEquipmentType.AIRCONDITIONINGUNIT"
+            string aeco:type:model = "CRAH"
+        }
+
+        class "Standby_Diesel_Generator" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcElectricGeneratorType.STANDALONE"
+            string aeco:type:model = "Standby Diesel Generator"
+        }
+
+        class "End_Suction_Pump" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPumpType.ENDSUCTION"
+            string aeco:type:model = "End-Suction Pump"
+        }
+
+        class "External_Wall_300" (
+            prepend apiSchemas = ["AecoBuildUpAPI", "AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            token[] aeco:buildUp:functions = ["other"]
+            string[] aeco:buildUp:materials = ["unspecified"]
+            int[] aeco:buildUp:priorities = [0]
+            double[] aeco:buildUp:thicknesses = [0.3]
+            string aeco:class:ifc:code = "IfcWallType.SOLIDWALL"
+            string aeco:type:model = "External Wall 300"
+        }
+
+        class "FWS_Pipe_DN200" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeSegmentType.RIGIDSEGMENT"
+            string aeco:type:model = "FWS Pipe DN200"
+        }
+
+        class "CHW_Pipe_Junction" (
+            prepend apiSchemas = ["AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            string aeco:class:ifc:code = "IfcPipeFittingType.JUNCTION"
+            string aeco:type:model = "CHW Pipe Junction"
+        }
+
+        class "Internal_Wall_150" (
+            prepend apiSchemas = ["AecoBuildUpAPI", "AecoTypeAPI", "AecoClassificationAPI:ifc"]
+        )
+        {
+            token[] aeco:buildUp:functions = ["other"]
+            string[] aeco:buildUp:materials = ["unspecified"]
+            int[] aeco:buildUp:priorities = [0]
+            double[] aeco:buildUp:thicknesses = [0.15]
+            string aeco:class:ifc:code = "IfcWallType.PARTITIONING"
+            string aeco:type:model = "Internal Wall 150"
+        }
+    }
+}
+

@@ -1,0 +1,62 @@
+[
+  {
+    "counts": {
+      "elements": 2983,
+      "levels": 3,
+      "meshes": 3022,
+      "ports": 6212,
+      "spaces": 39
+    },
+    "expected": {
+      "elements": 2983,
+      "levels": 3,
+      "meshes": 3022,
+      "ports": 6212,
+      "spaces": 39
+    },
+    "name": "SourceCensus"
+  },
+  {
+    "all_changes": {
+      "changed": 1,
+      "extra": 1
+    },
+    "declared_deviations": 0,
+    "extra_doors": 1,
+    "moved_walls": 0,
+    "name": "FloorDrift"
+  },
+  {
+    "doors": 1.0,
+    "name": "ScheduleDelta",
+    "partition_length_L01_m": 43.0,
+    "partition_length_L02_m": 46.2,
+    "partition_length_m": 3.200000000000003
+  },
+  {
+    "addition_lines": 50,
+    "max_error": 8.881784197001252e-16,
+    "name": "Composition",
+    "occurrence_lines": 686,
+    "over_lines": 267,
+    "prims_checked": 71,
+    "reference_count": 1,
+    "vertices_checked": 944
+  },
+  {
+    "message": "changed: /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/wall_l2_v_016",
+    "name": "RepeatDrift",
+    "paths": [
+      "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office"
+    ],
+    "severity": "error"
+  },
+  {
+    "message": "extra: /demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office/Additional_Meeting_Access",
+    "name": "RepeatDrift",
+    "paths": [
+      "/demo_datacentre_01/demo_datacentre_01_Site/demo_datacentre_01/L02_Office"
+    ],
+    "severity": "error"
+  }
+]

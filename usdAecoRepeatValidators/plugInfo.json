@@ -1,0 +1,31 @@
+{
+  "Plugins": [
+    {
+      "Type": "python",
+      "Name": "usdAecoRepeatValidators",
+      "Root": ".",
+      "Info": {
+        "Validators": {
+          "keywords": [
+            "UsdAecoRepeatValidators"
+          ],
+          "RepeatDriftChecker": {
+            "doc": "Report undeclared prototype differences or invalid repetition links."
+          },
+          "DeviationWithoutReasonChecker": {
+            "doc": "Every declared deviation member needs a reason.",
+            "schemaTypes": [
+              "UsdAecoRepeatRepeatAPI"
+            ]
+          },
+          "QuantityStaleChecker": {
+            "doc": "Detect quantities whose resolved measurement inputs, values or source stamps are stale.",
+            "schemaTypes": [
+              "UsdAecoRepeatQuantityAPI"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

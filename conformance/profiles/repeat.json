@@ -1,0 +1,10 @@
+{
+  "keywords": [
+    "UsdAecoRepeatValidators"
+  ],
+  "severity_overrides": {
+    "RepeatDrift": "error",
+    "DeviationWithoutReason": "error",
+    "QuantityStale": "error"
+  }
+}
