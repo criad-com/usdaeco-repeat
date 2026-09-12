@@ -10,7 +10,7 @@ needs explicit exceptions and a comparison against the actual prototype.
 ## 2 The data as it arrives
 
 The example consumes the complete published `floors` variant from data-centre
-v0.4.6. Its manifest records the unchanged v0.4.5 publication. Core containers,
+v0.4.8. Its manifest records the unchanged v0.4.5 publication. Core containers,
 classified occurrences, catalog inherits, axes, mesh bodies and exported
 quantities are already present. The source manifest supplies census expectations:
 2,983 elements, 3 levels, 39 spaces, 3,022 meshes and 6,212 ports.
@@ -146,8 +146,8 @@ and highlight outlines are presentation only; they do not change design intent.
 
 ## 9 Status
 
-v0.2.0: 44 checks, 0 failed, 0 not run; structure 29/0; 18 pytest tests passed.
-Both source layouts pass ResultStale. Schema, tools, defect drills and the full-facility publication are
+v0.2.1: 44 checks, 0 failed, 0 not run; structure 29/0; 18 pytest tests passed.
+The pinned publication passes ResultStale. Schema, tools, defect drills and the full-facility publication are
 implemented. The source's two proxy-classification warnings remain visible.
-See [CHANGELOG](../CHANGELOG.md#020) for gate, test, two-layout relocation and
-Nix evidence. Nix is not proven. No design approval is inferred from a green gate.
+See [CHANGELOG](../CHANGELOG.md#021) for current gate, test and Nix evidence;
+the two-layout relocation measurements remain recorded under v0.2.0. Nix is not proven. No design approval is inferred from a green gate.

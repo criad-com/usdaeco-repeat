@@ -11,7 +11,7 @@ Configure the checkout variables in the root README, then run:
 env -u PYTHONPATH "$AECO_PYTHON" examples/datacentre/run.py --publish
 ```
 
-`AECO_DATACENTRE_ROOT` must select v0.4.6; its floors publication is unchanged
+`AECO_DATACENTRE_ROOT` must select v0.4.8; its floors publication is unchanged
 from v0.4.5. The harness creates the ignored `inputs/source` symlink to that
 checkout. Archived source references stay inside the example via this alias
 (S29); recreate it by running the example before opening individual archived

@@ -20,7 +20,7 @@ No new typed prims, kind tokens or identities are introduced.
 
 ## The example
 
-Pinned input: `usdaeco-datacentre` **v0.4.6**, variant **floors**. Its floors
+Pinned input: `usdaeco-datacentre` **v0.4.8**, variant **floors**. Its floors
 publication is unchanged from v0.4.5, as recorded by `dc.manifest.json`.
 Open [result/example.usdc](examples/datacentre/result/example.usdc) in stock USD.
 It includes the complete facility, both office floors, site equipment and the
@@ -65,7 +65,7 @@ The source export’s prototype hint is published as `aeco:props:DC_Repeat:Proto
 
 Use Python with OpenUSD, numpy, pytest and the family toolchain available.
 No package installation is needed. Point these variables at your environment
-and checkouts (use the exact checked pins below, including data v0.4.6):
+and checkouts (use the exact checked pins below, including data v0.4.8):
 
 ```sh
 export AECO_PYTHON="$(command -v python)"
@@ -85,7 +85,8 @@ env -u PYTHONPATH "$AECO_PYTHON" -m pytest -q
 nix flake check
 ```
 
-`usdrecord` must be on `PATH` for the example gates. The gate fails loudly if
+Use the committed source plugin directories shown above; stale `out/` plugin
+metadata fails the exact-pin gate. `usdrecord` must be on `PATH` for the example gates. The gate fails loudly if
 `usdAecoValidators` cannot import, lists all eight core validators and all three
 local validators, and prints the family `N checks, M failed` summary. Expected
 seeded drift errors are compared with committed findings; they do not imply a
@@ -115,11 +116,11 @@ addresses and private lockfiles outside this repository.
 
 | Dependency | Supported range | Checked pin |
 |---|---|---|
-| `usdAeco` | `>=0.9.2,<1.0` | v0.9.2 |
-| `usdAecoBuildUp` | `>=0.2,<0.3` | v0.2.1 |
-| `usdAecoAxis` | `>=0.1,<0.2` | v0.1.2 |
-| Toolchain | `>=0.3.8,<0.4` | v0.3.8 |
-| Data centre | Example input | v0.4.6 |
+| `usdAeco` | `>=0.9.2,<1.0` | v0.9.5 |
+| `usdAecoBuildUp` | `>=0.2,<0.3` | v0.2.5 |
+| `usdAecoAxis` | `>=0.1,<0.2` | v0.1.5 |
+| Toolchain | `>=0.3.8,<0.4` | v0.3.10 |
+| Data centre | Example input | v0.4.8 |
 
 [Family board](https://github.com/criad-com/usdaeco-board) ·
 [pin record](dependencies.json) · [version contract](library.json).
@@ -136,8 +137,8 @@ Build output installation is separate from the source schema directory.
 
 ## Status
 
-v0.2.0: **44 checks, 0 failed, 0 not run; structure 29/0; 18 pytest tests passed**.
-Both source-layout reproductions pass `ResultStale`. The standalone result has
+v0.2.1: **44 checks, 0 failed, 0 not run; structure 29/0; 18 pytest tests passed**.
+The pinned publication passes `ResultStale`. The standalone result has
 12,342 prims and occupies 3,005,236 bytes across 17 files. The example and
 schema are tested against the exact pins above.
 The gate proves that all 12,337 source prims remain, with unchanged source
@@ -145,8 +146,9 @@ identities, meshes and world placement. Core validation retains the source's
 two proxy-classification warnings and adds no errors or warnings. Exactly two
 undeclared `RepeatDrift` findings remain; quantity stamps are current.
 
-Final gate, test and relocation measurements are recorded in the
-[changelog](CHANGELOG.md#020). Nix is not proven; its single offline attempt
+Current gate and test measurements, plus the earlier relocation evidence, are
+recorded in the [release verification](docs/public-repin.md) and
+[changelog](CHANGELOG.md#021). Nix is not proven; its single offline attempt
 and the remaining limits are recorded there. Static, non-instanced mesh floors,
 lines and circular arcs are supported. Exact solids, joins, cost and approval
 of deviations remain outside scope.

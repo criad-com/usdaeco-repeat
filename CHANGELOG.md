@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.2.1
+
+- public re-pin: usdaeco-toolchain v0.3.10, usdaeco-core v0.9.5,
+  usdaeco-axis v0.1.5, usdaeco-buildup v0.2.5, usdaeco-datacentre v0.4.8.
+  Record each tagged revision separately from its public release ref;
+  supported requirement ranges are unchanged.
+- Advance the library, Python package and generated plugin metadata to v0.2.1.
+- Rebuild the schema and republish through the documented example runner.
+  The flattened crate, all 14 archived USD layers, source hashes and expected
+  findings remain byte-identical. Only the result notice's source tag and
+  manifest provenance change; 16 of 17 result files retain their bytes.
+- Verify 44 checks, 0 failed, 0 not run; all 29 structure rules under toolchain
+  v0.3.10; 18 pytest tests; eight core and three repeat validators loaded.
+  The fresh example passes ResultStale in 26.331 s against its 180 s budget.
+  Preserve all 12,337 source prims, 9,248 identities and 3,022 meshes with zero
+  world-placement error. The result remains 12,342 prims and 3,005,236 bytes.
+- Upstream data-centre 0.4.7/0.4.8 retain all published stage bytes; core
+  0.9.3–0.9.5 retain the schema contract. Toolchain 0.3.10 changes tag checking
+  and pins while retaining its USD output. No geometry behavior change is
+  observed. Supported schema and Python requirement ranges remain unchanged.
+
+### Deviations
+
+- Fresh Embree samples change PNG bytes slightly. All four fresh 1280×800
+  renders pass; retain the committed images and their hashes under S28.
+  Mean absolute RGB channel differences on the 0–255 scale are 0.110593
+  (L01), 0.110087 (L02), 0.048515 (overview) and 0.049168 (vanilla).
+- Nix is not proven: one offline attempt with nine local source overrides
+  exited 1 before evaluation. The temporary v0.4.0 kit clone was shallow and
+  its Git override omitted Nix's required shallow flag. This was an override
+  setup error; no package evaluation or build pass is claimed and no retry
+  was made. The kit tag was found under the library forge owner after the
+  documented kit-owner lookup failed. No lockfile is committed.
+- Public tag availability follows the supplied release table. Independent
+  online resolution, review, merge and release tagging remain pending.
+
 ## 0.2.0
 
 - Renamed from usdaeco-typical: usdAecoRepeat, AecoRepeatAPI, aeco:repeat,

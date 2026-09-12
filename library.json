@@ -1,6 +1,6 @@
 {
   "name": "usdAecoRepeat",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "kind": "usecase",
   "tier": "kind",
   "licence": "MIT",

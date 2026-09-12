@@ -1,0 +1,153 @@
+{
+  "baseline": "v0.2.0",
+  "nix": {
+    "attempts": 1,
+    "builds": "not proven",
+    "elapsed_seconds": 1.114,
+    "evaluation": "not proven",
+    "kit_owner_fallback": true,
+    "overrides": [
+      "toolchain",
+      "core",
+      "datacentre",
+      "axis",
+      "buildup",
+      "toolchain/core",
+      "toolchain/aeco-toolchain",
+      "core/datacentre",
+      "axis/datacentre"
+    ],
+    "reason": "The shallow temporary kit Git override omitted the required shallow flag.",
+    "status": 1,
+    "timeout_seconds": 90
+  },
+  "pins": {
+    "axis": {
+      "library": "usdAecoAxis",
+      "ref": "v0.1.5",
+      "repo": "usdaeco-axis",
+      "revision": "ecff1d98bcc45c22fcceefd453374671900793ae"
+    },
+    "buildup": {
+      "library": "usdAecoBuildUp",
+      "ref": "v0.2.5",
+      "repo": "usdaeco-buildup",
+      "revision": "99ac95080bf4d1403d410b356c4645c3f251aa40"
+    },
+    "core": {
+      "library": "usdAeco",
+      "ref": "v0.9.5",
+      "repo": "usdaeco-core",
+      "revision": "683adc3280254bc71b396a9c64a359cc708788f4"
+    },
+    "datacentre": {
+      "library": null,
+      "ref": "v0.4.8",
+      "repo": "usdaeco-datacentre",
+      "revision": "9e22b14c4909e50806805e735f93b1b425ac48cb"
+    },
+    "toolchain": {
+      "library": null,
+      "ref": "v0.3.10",
+      "repo": "usdaeco-toolchain",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73"
+    }
+  },
+  "publication": {
+    "archived_layers_byte_identical": 14,
+    "expected_findings_byte_identical": true,
+    "images": [
+      {
+        "committed_sha256": "a2e3ed6e4c7af224fd860b58ac07ce954ed3866dc332b7b5b3b128afad47b4fe",
+        "fresh_bytes": 80698,
+        "fresh_sha256": "2bf37f3f99dbecbe07ac5c98127548f9534841e7200cf6a3b23d1aef58a4b472",
+        "height": 800,
+        "mean_absolute_rgb_difference": 0.110593,
+        "path": "renders/l01.png",
+        "width": 1280
+      },
+      {
+        "committed_sha256": "61001cc1ae5560ce8fb38ef747ede0aed91b7d3555fe82e6cadb727e02025157",
+        "fresh_bytes": 81399,
+        "fresh_sha256": "ca4963f1ac06e4eb8499beb38d2988e11b4fe30d960c58f65a9c53078d7eaec7",
+        "height": 800,
+        "mean_absolute_rgb_difference": 0.110087,
+        "path": "renders/l02.png",
+        "width": 1280
+      },
+      {
+        "committed_sha256": "a3c2e05455860a0b04d353a05dc9d56ea28f410b8816dfbf048ea24dddd13635",
+        "fresh_bytes": 185501,
+        "fresh_sha256": "d059da71ecaf9741762ecec33d2fcbba95fe3f0923c4f37fe88cd4e13839d01c",
+        "height": 800,
+        "mean_absolute_rgb_difference": 0.048515,
+        "path": "renders/overview.png",
+        "width": 1280
+      },
+      {
+        "committed_sha256": "21dcf308bffe668545c8658877bb53deb01f3a502a5f890539f3f26f3fc7bfd9",
+        "fresh_bytes": 186167,
+        "fresh_sha256": "98be578c81b46fe458bb449619dbc2ec700f9a3a2a74ccedce16a695c1435d42",
+        "height": 800,
+        "mean_absolute_rgb_difference": 0.049168,
+        "path": "result/vanilla.png",
+        "width": 1280
+      }
+    ],
+    "result_bytes": 3005236,
+    "result_files": 17,
+    "result_files_byte_identical": 16,
+    "result_prims": 12342,
+    "source_layer_hashes_unchanged": true,
+    "source_manifest_hash_unchanged": true,
+    "usd_files_byte_identical": 15
+  },
+  "release": "v0.2.1",
+  "runtime": {
+    "openusd": "0.26.8",
+    "package_installed": false,
+    "plugins": "committed source directories",
+    "python": "3.13.12"
+  },
+  "verification": {
+    "check_py": {
+      "checks": 44,
+      "failed": 0,
+      "not_run": 0
+    },
+    "diff_check": "pass",
+    "example_budget_seconds": 180,
+    "example_seconds": 26.331,
+    "obsolete_public_owner_refs": 0,
+    "publication_sweep": {
+      "files": 68,
+      "findings": 0
+    },
+    "pytest": {
+      "passed": 18
+    },
+    "repeat_validation": {
+      "expected_drift_errors": 2,
+      "stale_quantities": 0
+    },
+    "source_preservation": {
+      "identities": 9248,
+      "max_world_error": 0.0,
+      "meshes": 3022,
+      "prims": 12337
+    },
+    "source_validation": {
+      "additional_warnings": 0,
+      "errors": 0,
+      "warnings": 2
+    },
+    "structure": {
+      "checks": 29,
+      "failed": 0
+    },
+    "validators": {
+      "core": 8,
+      "repeat": 3
+    }
+  }
+}
